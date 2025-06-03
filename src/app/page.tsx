@@ -1,12 +1,14 @@
 import Link from "next/link";
 
 import WizardForm from "./components/home/WizardForm";
+import Slider from "./components/home/Slider";
 
 export default async function HomePage() {
   return (
     <main>
       <section
         className="relative h-[85vh] bg-cover bg-center bg-no-repeat"
+        id="home"
         style={{backgroundImage: "url('./home.png')"}}
       >
         <div className="bg-primary h-full w-full opacity-[0.63]" />
@@ -17,13 +19,16 @@ export default async function HomePage() {
           <p className="text-2xl font-semibold">
             Arquitectos especializados en diseñar, remodelar y construir hogares felices.
           </p>
-          <Link className="rounded-md border border-white px-5 py-2" href="/contacto">
+          <Link
+            className="hover:bg-primary rounded-md border border-white px-5 py-2 transition-all"
+            href="/contacto"
+          >
             Escribinos
           </Link>
         </div>
       </section>
       <WizardForm />
-      <section className="my-30 flex items-start justify-center gap-4">
+      <section className="my-30 flex items-start justify-center gap-4" id="grid">
         <div
           className="relative h-[100vh] w-[413px] bg-cover bg-center"
           style={{backgroundImage: "url('./home2.jpg')"}}
@@ -105,10 +110,61 @@ export default async function HomePage() {
       </section>
       <section
         className="relative h-[90vh] bg-cover bg-center"
+        id="boxs"
         style={{backgroundImage: "url('./home5.jpg')"}}
       >
         <div className="h-full w-full bg-[#676B87] opacity-[0.43]" />
-        <div className="bg-primary absolute top-0">asddsa</div>
+        <div
+          className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center gap-5"
+          id="container"
+        >
+          <div className="flex h-96 w-96 flex-col items-center justify-between gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white">
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-6xl font-bold">1</p>
+              <p className="text-2xl font-bold">¡Te Escuchamos!</p>
+            </div>
+            <p>Este es el primer paso para conseguir tu casa</p>
+            <p>
+              Lo primero que vamos a hacer es escucharte para entender que necesidades tenes y como
+              te gustaría vivir para poder sorprenderte con ideas que vayan con vos y tu familia,
+              con tu vida familiar en casa
+            </p>
+          </div>
+          <div className="flex h-96 w-96 flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white">
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-6xl font-bold">2</p>
+              <p className="text-2xl font-bold">¡Vizualizamos!</p>
+            </div>
+            <p>
+              A partir de ahora es el momento de que sueñes y traigas todas las ideas que tengas en
+              tu mente, así las combinamos con las nuestras y juntos construimos el diseño de tu
+              casa
+            </p>
+          </div>
+          <div className="flex h-96 w-96 flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white">
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-6xl font-bold">3</p>
+              <p className="text-2xl font-bold">¡Comenzamos!</p>
+            </div>
+            <p>
+              Ahora que ya tenes todos los permisos podemos construir la casa de tus hijos y nos
+              vamos a encargar de absolutamente todo para que puedan disfrutar en familia viendo
+              cómo se construye tu casa
+            </p>
+            <Link className="mt-5 rounded-md border border-white px-6 py-2" href="/contacto">
+              Escribinos
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="my-20" id="nuestras-casas">
+        <div className="my-20 flex items-center justify-center gap-5">
+          <h3 className="text-primary text-6xl font-bold">Nuestras casas</h3>
+          <p className="text-primary max-w-[600px] text-4xl font-medium">
+            Diseñamos y construimos las mejores soluciones.
+          </p>
+        </div>
+        <Slider />
       </section>
     </main>
   );

@@ -1,9 +1,13 @@
 import type {Metadata} from "next";
 
 import {Encode_Sans} from "next/font/google";
+import Link from "next/link";
+
+import Instagram from "./components/Instagram";
+import Whatsapp from "./components/Whatsapp";
+import Arrow from "./components/Arrow";
 
 import "./globals.css";
-import Link from "next/link";
 
 export const encodeSans = Encode_Sans({
   subsets: ["latin"],
@@ -20,7 +24,9 @@ export default async function RootLayout({children}: {children: React.ReactNode}
     <html lang="es">
       <body className={`${encodeSans.className} bg-white text-black`}>
         <header className="fixed top-0 z-20 flex w-full items-center justify-around gap-[440px] border-b border-[#d6d6d6] bg-white px-96 py-4 text-black">
-          <img alt="Logo" src="./logo.png" width="250px" />
+          <Link href="/">
+            <img alt="Logo" src="./logo.png" width="250px" />
+          </Link>
           <ul className="flex gap-14 font-light tracking-wide text-[#001F3D]">
             <li>
               <Link href="/">Nosotros</Link>
@@ -37,7 +43,42 @@ export default async function RootLayout({children}: {children: React.ReactNode}
           </ul>
         </header>
         {children}
-        <footer className="text-center leading-[4rem] opacity-70">estudiovarq-website</footer>
+        <footer className="flex justify-between bg-[#FAFAF4] px-52 pt-20 pb-10 shadow-sm shadow-black">
+          <section className="flex w-full justify-between">
+            <Link href="/">
+              <img alt="Logo" src="./logofoooter.png" width="250px" />
+            </Link>
+            <ul className="text-primary flex flex-col gap-2">
+              <li className="text-lg">Nosotros</li>
+              <li className="flex gap-2 text-lg">
+                <p>Servicios</p>
+                <Arrow />
+              </li>
+              <ul className="flex flex-col gap-2 text-sm underline">
+                <Link href="/">Nuevas construcciones</Link>
+                <Link href="/">Remodelaciones</Link>
+              </ul>
+              <li className="text-lg">Casas</li>
+              <li className="text-lg">Contactanos</li>
+              <li className="bg-primary mx-auto mt-5 flex w-max items-center justify-center gap-5 rounded-sm p-1">
+                <img alt="facebook" src="./facebook.png" width="15px" />
+                <Instagram />
+              </li>
+            </ul>
+            <ul className="text-primary flex flex-col items-center gap-2">
+              <li className="text-lg font-semibold">Contactanos</li>
+              <li>hola@estudiovarq.com.ar</li>
+              <li>+5491159765711</li>
+              <li className="flex gap-2">
+                <Whatsapp />
+                <p>+5491159091000</p>
+              </li>
+              <li className="mt-5 text-sm">
+                © Estudio Varq 2023 – Buenos Aires Todos los derechos reservados
+              </li>
+            </ul>
+          </section>
+        </footer>
       </body>
     </html>
   );
