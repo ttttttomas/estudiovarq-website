@@ -1,3 +1,13 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
+
+
+@theme {
+    --color-primary: #001F3D;
+    --color-secondary: #DDECF5;
+    --color-tertiary: #38728A;
+    --color-red: #ff7171;
+    --animation-loading: loading 1s ease-in-out infinite;
+  }
+  

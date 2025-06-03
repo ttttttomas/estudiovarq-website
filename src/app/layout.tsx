@@ -19,9 +19,9 @@ export default async function RootLayout({children}: {children: React.ReactNode}
   return (
     <html lang="es">
       <body className={`${encodeSans.className} bg-white text-black`}>
-        <header className="flex items-center justify-between gap-20 bg-white px-96 py-5 text-black">
+        <header className="fixed top-0 z-20 flex w-full items-center justify-around gap-[440px] border-b border-[#d6d6d6] bg-white px-96 py-4 text-black">
           <img alt="Logo" src="./logo.png" width="250px" />
-          <ul className="flex gap-10 text-[#001F3D]">
+          <ul className="flex gap-14 font-light tracking-wide text-[#001F3D]">
             <li>
               <Link href="/">Nosotros</Link>
             </li>
