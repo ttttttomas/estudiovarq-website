@@ -29,16 +29,16 @@ export default async function RootLayout({children}: {children: React.ReactNode}
           </Link>
           <ul className="flex gap-14 font-light tracking-wide text-[#001F3D]">
             <li>
-              <Link href="/">Nosotros</Link>
+              <Link href="/nosotros">Nosotros</Link>
             </li>
             <li>
               <Link href="/">Servicios</Link>
             </li>
             <li>
-              <Link href="/">Casas</Link>
+              <Link href="/casas">Casas</Link>
             </li>
             <li>
-              <Link href="/">Contactanos</Link>
+              <Link href="/contacto">Contactanos</Link>
             </li>
           </ul>
         </header>
@@ -58,25 +58,29 @@ export default async function RootLayout({children}: {children: React.ReactNode}
                 <Link href="/">Nuevas construcciones</Link>
                 <Link href="/">Remodelaciones</Link>
               </ul>
-              <li className="text-lg">Casas</li>
-              <li className="text-lg">Contactanos</li>
+              <Link className="text-lg" href="/casas">
+                Casas
+              </Link>
+              <Link className="text-lg" href="/">
+                Contactanos
+              </Link>
               <li className="bg-primary mx-auto mt-5 flex w-max items-center justify-center gap-5 rounded-sm p-1">
                 <img alt="facebook" src="./facebook.png" width="15px" />
                 <Instagram />
               </li>
             </ul>
-            <ul className="text-primary flex flex-col items-center gap-2">
-              <li className="text-lg font-semibold">Contactanos</li>
-              <li>hola@estudiovarq.com.ar</li>
-              <li>+5491159765711</li>
-              <li className="flex gap-2">
-                <Whatsapp />
-                <p>+5491159091000</p>
-              </li>
-              <li className="mt-5 text-sm">
-                © Estudio Varq 2023 – Buenos Aires Todos los derechos reservados
-              </li>
-            </ul>
+            <div className="flex flex-col justify-between">
+              <ul className="text-primary flex h-full flex-col items-center justify-start gap-8">
+                <li className="text-lg font-semibold">Contactanos</li>
+                <li>hola@estudiovarq.com.ar</li>
+                <li>+5491159765711</li>
+                <li className="flex gap-2">
+                  <Whatsapp />
+                  <p>+5491159091000</p>
+                </li>
+              </ul>
+              <p> © Estudio Varq 2023 – Buenos Aires Todos los derechos reservados</p>
+            </div>
           </section>
         </footer>
       </body>
