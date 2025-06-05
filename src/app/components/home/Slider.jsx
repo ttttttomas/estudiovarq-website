@@ -1,55 +1,54 @@
-'use client'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import axios from "axios";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { useEffect, useState } from "react";
 
 const MySlider = () => {
+  const [houses, setHouses] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(
+        "https://api-estudiovarq.iwebtecnology.com/houses",
+      );
+      setHouses(response.data);
+      console.log(response.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="mx-5">
       <Swiper
-      effect='flip'
+        effect="flip"
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={15}
-        slidesPerView={2}
+        slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
         loop={true}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+        }}
       >
-        <SwiperSlide>
-            <a href="/">
-          <img src="./home.png" alt="Slide 1" />
+        {houses.map((house) => (
+          <SwiperSlide className="w-full h-full" key={house.id}>
+            <a href={`/casas/${house.id}`}>
+          <img className="md:h-[600px] w-full object-cover aspect-square" src={house.images[0]} alt={house.title} />
             </a>
-        </SwiperSlide>
-        <SwiperSlide>
-            <a href="/">
-          <img src="./home.png" alt="Slide 2" />
-            </a>
-        </SwiperSlide>
-        <SwiperSlide>
-            <a href="/">
-          <img src="./home.png" alt="Slide 3" />
-            </a>
-        </SwiperSlide>
-        <SwiperSlide>
-            <a href="/">
-          <img src="./home.png" alt="Slide 4" />
-            </a>
-        </SwiperSlide>
-        <SwiperSlide>
-            <a href="/">
-          <img src="./home.png" alt="Slide 5" />
-            </a>
-        </SwiperSlide>
-        <SwiperSlide>
-            <a href="/">
-          <img src="./home.png" alt="Slide 6" />
-            </a>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
+
       </Swiper>
     </div>
   );

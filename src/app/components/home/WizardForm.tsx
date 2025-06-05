@@ -71,7 +71,7 @@ function WizardForm() {
   };
 
   return (
-    <section className="mx-auto mt-20 w-full max-w-4xl rounded-xl bg-white p-6 text-black shadow-md">
+    <section className="mx-auto mt-20 w-full max-w-4xl rounded-xl bg-white p-6 text-black shadow-sm shadow-black/30">
       <h2 className="mb-4 text-center text-2xl font-bold">¡Imaginemos tu casa juntos!</h2>
       <div className="mb-4 h-2 w-full rounded-full bg-gray-200">
         <div className="h-2 rounded-full bg-black" style={{width: `${(step / 10) * 100}%`}} />

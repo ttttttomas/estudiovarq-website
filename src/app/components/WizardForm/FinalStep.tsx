@@ -22,7 +22,7 @@ function FinalStep({formData, setFormData, prev}: StepProps) {
   return (
     <div className="space-y-4">
       <p className="text-primary text-center text-2xl font-semibold">
-        Completá tus datos y recibí los resultados en tu email y WhatsApp
+        Completá tus datos y recibí los resultados en tu email
       </p>
       <input
         className="w-full rounded border p-2"
