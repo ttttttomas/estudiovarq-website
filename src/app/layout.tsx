@@ -33,7 +33,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
         <footer className="flex items-center justify-between bg-[#FAFAF4] pt-20 pb-10 shadow-sm shadow-black md:px-52">
           <section className="flex w-full flex-col items-center justify-between gap-5 md:flex-row md:gap-0">
             <Link href="/">
-              <img alt="Logo" className="w-[250px] md:w-[250px]" src="./logofoooter.png" />
+              <img alt="Logo" className="w-[250px] md:w-[250px]" src="/logofoooter.png" />
             </Link>
             <ul className="text-primary flex flex-col gap-2">
               <li className="text-lg">Nosotros</li>
