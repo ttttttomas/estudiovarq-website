@@ -1,9 +1,7 @@
 'use client'
 import Link from "next/link";
-import { useState } from "react";
 
-
-export default function Menu({onClick, open}) {
+export default function Menu({onClick, open}) {  
   return (
     <section onClick={onClick}>
       <svg

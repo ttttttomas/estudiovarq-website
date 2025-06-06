@@ -1,13 +1,13 @@
 export default function Nosotrospage() {
   return (
-    <main className="text-primary mt-30 px-30">
+    <main className="text-primary mt-30 px-5 md:px-30">
       <section>
-        <p className="text-md text-gray-500">Acerca de</p>
+        <p className="text-md text-center text-gray-500 md:text-start">Acerca de</p>
         <h1 className="text-5xl font-semibold">Estudio VArq</h1>
       </section>
-      <section className="my-10 flex items-center justify-center gap-6">
+      <section className="my-10 flex flex-col items-center justify-center gap-6 md:flex-row">
         <img alt="" className="w-1/2" src="/nosotros.jpg" />
-        <ul className="flex h-full w-1/2 flex-col justify-between gap-10">
+        <ul className="flex h-full w-full flex-col justify-between gap-10 md:w-1/2">
           <li>
             Somos <b>Gabriela y Sebastián</b> fundamos <b>Estudio VArq</b> para resolver de forma
             más concreta el problema de las familias a la hora de decidir donde y como vivir.

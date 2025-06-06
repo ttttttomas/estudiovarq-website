@@ -12,33 +12,13 @@ import Step7 from "../WizardForm/Step7";
 import Step8 from "../WizardForm/Step8";
 import Step9 from "../WizardForm/Step9";
 
-interface FormData {
-  mainBedroom: string;
-  secondBedroom: string;
-  diningRoom: string;
-  livingRoom: string;
-  plants: string;
-  garage: string;
-  anotherPlace: string;
-  bathroom: string;
-  kitchen: string;
-  name: string;
-  email: string;
-  phone: string;
-  zone: string;
-  startDate: string;
-  comments: string;
-  lastname: string;
-  address: string;
-}
-
 function WizardForm() {
-  const [step, setStep] = useState<number>(1);
-  const [formData, setFormData] = useState<FormData>({
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
     mainBedroom: "",
     diningRoom: "",
     livingRoom: "",
-    plants: "planta baja",
+    plants: "Planta Baja",
     garage: "",
     anotherPlace: "",
     bathroom: "",
@@ -50,7 +30,7 @@ function WizardForm() {
     zone: "",
     startDate: "",
     comments: "",
-    lastname: "",
+    lastName: "",
     address: "",
   });
 

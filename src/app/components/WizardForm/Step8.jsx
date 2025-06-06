@@ -1,14 +1,5 @@
-interface StepProps {
-  formData: {
-    anotherPlace: string;
-  };
-  setFormData: (data: any) => void;
-  next: () => void;
-  prev: () => void;
-}
-
-function Step8({formData, setFormData, next, prev}: StepProps) {
-  const selectOption = (option: string) => {
+function Step8({formData, setFormData, next, prev}) {
+  const selectOption = (option) => {
     setFormData({...formData, anotherPlace: option});
   };
 
@@ -54,10 +45,10 @@ function Step8({formData, setFormData, next, prev}: StepProps) {
         </div>
       </div>
       <div className="flex justify-between pt-4">
-        <button className="rounded bg-gray-300 px-4 py-2" onClick={prev}>
+        <button className="cursor-pointer rounded bg-gray-300 px-4 py-2" onClick={prev}>
           Anterior
         </button>
-        <button className="rounded bg-black px-4 py-2 text-white" onClick={next}>
+        <button className="cursor-pointer rounded bg-black px-4 py-2 text-white" onClick={next}>
           Siguiente
         </button>
       </div>

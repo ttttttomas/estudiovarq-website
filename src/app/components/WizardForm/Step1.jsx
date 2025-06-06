@@ -1,14 +1,5 @@
-// components/steps/Step1.tsx
-interface StepProps {
-  formData: {
-    kitchen: string;
-  };
-  setFormData: (data: any) => void;
-  next: () => void;
-}
-
-function Step1({formData, setFormData, next}: StepProps) {
-  const selectOption = (option: string) => {
+function Step1({formData, setFormData, next}) {
+  const selectOption = (option) => {
     setFormData({...formData, kitchen: option});
   };
 
@@ -46,7 +37,7 @@ function Step1({formData, setFormData, next}: StepProps) {
       </div>
       <div className="flex justify-between pt-4">
         <button className="rounded bg-gray-200 px-4 py-2 text-white">Anterior</button>
-        <button className="rounded bg-black px-4 py-2 text-white" onClick={next}>
+        <button className="cursor-pointer rounded bg-black px-4 py-2 text-white" onClick={next}>
           Siguiente
         </button>
       </div>

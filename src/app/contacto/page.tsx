@@ -1,20 +1,30 @@
 "use client";
+import axios from "axios";
 import {useState} from "react";
+import {useRouter} from "next/navigation";
+import {toast, Toaster} from "sonner";
 
 export default function ContactPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
-    nombre: "",
-    telefono: "",
+    full_name: "",
+    phone: "",
     email: "",
     address: "",
     zone: "",
     startDate: "",
-    mensaje: "",
+    comments: "",
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
+
+    axios.post("https://api-estudiovarq.iwebtecnology.com/formContact", formData);
+    toast.success("¡Formulario enviado!");
+    setTimeout(() => {
+      router.push("/");
+    }, 2000);
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +40,9 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="mx-auto my-52 flex w-full max-w-5xl items-start justify-center gap-20">
-      <section className="flex w-1/2 flex-col gap-10">
+    <main className="mx-auto my-32 flex w-full max-w-5xl flex-col items-start justify-center gap-20 px-10 md:my-52 md:flex-row md:px-0">
+      <Toaster richColors position="bottom-center" />
+      <section className="flex w-full flex-col gap-10 md:w-1/2">
         <h1 className="text-primary text-5xl font-bold">
           Podemos diseñar y construir tu casa para que tengas más momentos felices con tu familia
         </h1>
@@ -40,24 +51,26 @@ export default function ContactPage() {
           felicidad.
         </p>
       </section>
-      <form className="flex w-1/2 flex-col gap-3" onSubmit={handleSubmit}>
-        <label className="text-primary text-lg font-medium" htmlFor="nombre">
+      <form className="flex w-full flex-col gap-3 md:w-1/2" onSubmit={handleSubmit}>
+        <label className="text-primary text-lg font-medium" htmlFor="full_name">
           Nombre Completo
         </label>
         <input
+          required
           className="w-full rounded-md border border-gray-300 px-5 py-2"
-          id="nombre"
-          name="nombre"
+          id="full_name"
+          name="full_name"
           type="text"
           onChange={onChange}
         />
-        <label className="text-primary text-lg font-medium" htmlFor="telefono">
+        <label className="text-primary text-lg font-medium" htmlFor="phone">
           Teléfono
         </label>
         <input
+          required
           className="w-full rounded-md border border-gray-300 px-5 py-2"
-          id="nombre"
-          name="telefono"
+          id="phone"
+          name="phone"
           type="text"
           onChange={onChange}
         />
@@ -65,6 +78,7 @@ export default function ContactPage() {
           Email
         </label>
         <input
+          required
           className="w-full rounded-md border border-gray-300 px-5 py-2"
           id="email"
           name="email"
@@ -75,6 +89,7 @@ export default function ContactPage() {
           ¿Ya tenes el terreno o casa donde vivas o quieras vivir ?
         </label>
         <input
+          required
           className="w-full rounded-md border border-gray-300 px-5 py-2"
           id="address"
           name="address"
@@ -85,6 +100,7 @@ export default function ContactPage() {
           ¿En que zona se encuentra?
         </label>
         <input
+          required
           className="w-full rounded-md border border-gray-300 px-5 py-2"
           id="zone"
           name="zone"
@@ -95,6 +111,7 @@ export default function ContactPage() {
           ¿Cuándo te gustaría ponerte en marcha para iniciar este proyecto?
         </label>
         <input
+          required
           className="w-full rounded-md border border-gray-300 px-5 py-2"
           id="startDate"
           name="startDate"
@@ -102,13 +119,13 @@ export default function ContactPage() {
           onChange={onChange}
         />
 
-        <label className="text-primary text-lg font-medium" htmlFor="mensaje">
+        <label className="text-primary text-lg font-medium" htmlFor="comments">
           Observaciones (cualquier cosa que quieras comentarnos va a ser de mucha ayuda)
         </label>
         <textarea
           className="w-full rounded-md border border-gray-300 px-5 py-2"
-          id="mensaje"
-          name="mensaje"
+          id="comments"
+          name="comments"
           rows={5}
           onChange={onChangeTextarea}
         />
