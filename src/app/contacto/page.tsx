@@ -40,10 +40,10 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="mx-auto my-32 flex w-full max-w-5xl flex-col items-start justify-center gap-20 px-10 md:my-52 md:flex-row md:px-0">
+    <main className="mx-auto my-32 flex w-full max-w-6xl flex-col items-start justify-center gap-20 px-10 md:flex-row md:px-0">
       <Toaster richColors position="bottom-center" />
       <section className="flex w-full flex-col gap-10 md:w-1/2">
-        <h1 className="text-primary text-5xl font-bold">
+        <h1 className="text-primary text-5xl font-semibold">
           Podemos diseñar y construir tu casa para que tengas más momentos felices con tu familia
         </h1>
         <p className="text-2xl font-semibold text-gray-400">
@@ -51,7 +51,7 @@ export default function ContactPage() {
           felicidad.
         </p>
       </section>
-      <form className="flex w-full flex-col gap-3 md:w-1/2" onSubmit={handleSubmit}>
+      <form className="flex w-full flex-col gap-2 md:w-1/2" onSubmit={handleSubmit}>
         <label className="text-primary text-lg font-medium" htmlFor="full_name">
           Nombre Completo
         </label>

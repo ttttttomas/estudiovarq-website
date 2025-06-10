@@ -2,9 +2,9 @@
 
 export default function NewHousesPage() {
   return (
-    <main className="items-center justify-center pt-32 md:h-[80vh] md:pt-52">
+    <main className="mt-10 items-center justify-center pt-32 md:mt-0 md:h-screen md:pt-52">
       <div className="flex flex-col items-center justify-center gap-20 pb-32 md:flex-row">
-        <section className="flex w-full max-w-[550px] flex-col items-start justify-center gap-5 px-10 text-center md:w-1/2 md:px-0">
+        <section className="flex w-full max-w-[550px] flex-col items-start justify-center gap-5 px-10 text-center md:w-1/2 md:px-18">
           <p className="text-primary text-light text-2xl">Nuevas construcciones</p>
           <h1 className="text-primary text-start text-xl font-semibold md:text-3xl">
             ¿Porque nuestras construcciones son ideales para las familias?

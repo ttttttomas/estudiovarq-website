@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import HomeCard from "../components/HomeCard";
+import WizardForm from "../components/home/WizardForm";
 
 import {House} from "@/types";
 
@@ -18,6 +19,9 @@ export default async function Casaspage() {
         {houses.map((house: House) => (
           <HomeCard key={house.id} house={house} />
         ))}
+      </section>
+      <section className="my-20">
+        <WizardForm />
       </section>
     </main>
   );

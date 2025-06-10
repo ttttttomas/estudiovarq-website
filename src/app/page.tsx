@@ -7,7 +7,7 @@ export default async function HomePage() {
   return (
     <main className="mt-18 md:mt-0">
       <section
-        className="relative h-screen bg-cover bg-center bg-no-repeat md:h-[85vh]"
+        className="relative h-screen bg-cover bg-center bg-no-repeat md:h-[100vh]"
         id="home"
         style={{backgroundImage: "url('./home.png')"}}
       >
@@ -50,7 +50,7 @@ export default async function HomePage() {
           />
         </div>
 
-        <div className="flex flex-col gap-2 text-white md:w-[700px]">
+        <div className="flex flex-col text-white md:w-[700px]">
           <div className="flex flex-col md:flex-row">
             <div
               className="relative h-[50vh] w-full bg-cover bg-center"
@@ -173,11 +173,13 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-      <section className="my-20" id="nuestras-casas">
+      <section className="my-0" id="nuestras-casas">
         <div className="mx-auto my-20 flex flex-col items-center justify-center gap-5 md:flex-row">
-          <h3 className="text-primary text-5xl font-bold md:text-6xl">Nuestras casas</h3>
-          <p className="text-primary text-center text-2xl font-medium md:max-w-[600px] md:text-4xl">
-            Diseñamos y construimos las mejores soluciones.
+          <h3 className="text-primary w-full px-5 text-3xl font-bold md:w-auto md:text-4xl">
+            Estas son las casas que podemos hacer por vos
+          </h3>
+          <p className="text-primary px-5 text-center text-2xl font-medium md:max-w-[600px] md:px-0 md:text-4xl">
+            Diseñamos, remodelamos y construimos hogares felices.
           </p>
         </div>
         <Slider />

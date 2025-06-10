@@ -1,10 +1,22 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+    // Por ejemplo, si el ancho es menor a 768px, lo consideramos mobile
+    setIsDragging(window.innerWidth >= 768);
+  };
+
+  handleResize(); // Ejecutar al montar
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+  }, [])
+  
   const handleClick = () => {
     setOpen(!open);
   };
@@ -14,44 +26,41 @@ export default function Header() {
         <Link href="/">
           <img alt="Logo" src="/logo.png" className="w-64" />
         </Link>
-        <ul className="flex gap-10 md:gap-14 font-light text-sm mt-5 md:mt-0 relative md:tracking-wide text-[#001F3D]">
-          <li className="opacity-60 hover:opacity-100">
-            <Link href="/nosotros">Nosotros</Link>
+        <ul className="flex gap-8 md:gap-14 font-light text-md md:text-[17px] mt-5 md:mt-0 relative md:tracking-wide text-primary">
+          <li>
+            <Link className="hover:opacity-50 transition-all" href="/nosotros">Nosotros</Link>
           </li>
-          <li
-            className="cursor-pointer opacity-60 hover:opacity-100"
-            onClick={handleClick}
-          >
+          <li className="cursor-pointer hover:opacity-50 transition-all" onClick={handleClick} onMouseEnter={handleClick}>
             Servicios
           </li>
-
           <ul
+            onMouseLeave={handleClick}
             className={
               open
-                ? "flex flex-col gap-2 absolute left-[50px] md:right-[150px] border-primary  bg-white py-2 px-4 top-[35px] md:top-[50px]"
-                : "hidden"
+                ? "flex transition-all flex-col gap-2 absolute left-[50px] md:right-[150px] border-primary  bg-white py-2 px-4 top-[35px] md:top-[50px]"
+                : "hidden transition-all"
             }
           >
             <Link
               onClick={() => setOpen(false)}
-              className="hover:scale-105"
+              className="hover:scale-105 transition-all"
               href="/nuevas-construcciones"
             >
               Nuevas construcciones
             </Link>
             <Link
               onClick={() => setOpen(false)}
-              className="hover:scale-105"
+              className="hover:scale-105 transition-all"
               href="/remodelaciones"
             >
               Remodelaciones
             </Link>
           </ul>
-          <li className="opacity-60 hover:opacity-100">
-            <Link href="/casas">Casas</Link>
+          <li>
+            <Link className="hover:opacity-50 transition-all" href="/casas">Casas</Link>
           </li>
-          <li className="opacity-60 hover:opacity-100">
-            <Link href="/contacto">Contactanos</Link>
+          <li>
+            <Link className="hover:opacity-50 transition-all" href="/contacto">Contactanos</Link>
           </li>
         </ul>
       </header>

@@ -2,7 +2,7 @@ export default function RemodelacionesPage() {
   return (
     <main className="mb-20 items-center justify-center pt-32 md:h-[80vh] md:pt-52">
       <div className="flex flex-col items-center justify-center gap-20 pb-32 md:flex-row">
-        <section className="flex w-full flex-col items-start justify-center gap-5 px-10 text-center md:w-1/2 md:max-w-[550px]">
+        <section className="flex w-full flex-col items-start justify-center gap-5 px-18 text-center md:w-1/2 md:max-w-[550px]">
           <p className="text-primary text-light text-2xl">Remodelaciones</p>
           <h1 className="text-primary text-start text-2xl font-semibold md:text-3xl">
             ¿Por que nuestras remodelaciones son ideales para las familias?

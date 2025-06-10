@@ -15,7 +15,7 @@ function Step4({formData, setFormData, next, prev}) {
           }`}
         >
           <p> Toilette</p>
-          <img alt="Toilette" className="mx-auto mb-2" src="/form/9.png" />
+          <img alt="Toilette" className="mx-auto mb-2" src="/form/10.png" />
           <select name="bathroom" onChange={handleChange}>
             <option value="Ninguno">Ninguno</option>
             <option value="1/Toilette">Uno</option>
@@ -29,7 +29,7 @@ function Step4({formData, setFormData, next, prev}) {
           }`}
         >
           <p>Baño simple</p>
-          <img alt="Baño simple" className="mx-auto mb-2" src="/form/10.png" />
+          <img alt="Baño simple" className="mx-auto h-48 mb-2" src="/form/9.png" />
           <select name="bathroom" onChange={handleChange}>
             <option value="Ninguno">Ninguno</option>
             <option value="1/simple">Uno</option>
