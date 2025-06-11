@@ -1,16 +1,23 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "sonner";
+import { useM2 } from "@/app/context/M2Context";
 
 function FinalStep({formData, setFormData, prev}) {
+  const { totalsM2 } = useM2();
   const router = useRouter();
+  const dataToSend = {
+    ...formData,
+    totalsM2,
+  };
   const handleSubmit = () => {
-    axios.post("https://api-estudiovarq.iwebtecnology.com/wizardForm", formData);
-
+    axios.post("https://api-estudiovarq.iwebtecnology.com/wizardForm", dataToSend);
+    
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
       router.push("/nosotros");
     }, 2000);
+    
   };
 
   return (

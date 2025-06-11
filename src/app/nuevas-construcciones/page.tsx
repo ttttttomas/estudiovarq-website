@@ -1,8 +1,8 @@
-// import Link from "next/link";
+import Link from "next/link";
 
 export default function NewHousesPage() {
   return (
-    <main className="mt-10 items-center justify-center pt-32 md:mt-0 md:h-screen md:pt-52">
+    <main className="mt-10 items-center justify-center py-32 md:mt-0 md:pt-52">
       <div className="flex flex-col items-center justify-center gap-20 pb-32 md:flex-row">
         <section className="flex w-full max-w-[550px] flex-col items-start justify-center gap-5 px-10 text-center md:w-1/2 md:px-18">
           <p className="text-primary text-light text-2xl">Nuevas construcciones</p>
@@ -42,8 +42,8 @@ export default function NewHousesPage() {
           </ul>
         </section>
       </div>
-      {/* <section
-        className="relative h-[200vh] bg-cover bg-center md:h-[50vh]"
+      <section
+        className="relative h-[200vh] bg-cover bg-center md:h-[90vh]"
         id="boxs"
         style={{backgroundImage: "url('./home5.jpg')"}}
       >
@@ -64,7 +64,7 @@ export default function NewHousesPage() {
               con tu vida familiar en casa
             </p>
           </div>
-          <div className="flex w-full flex-col items-center justify-between gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
+          <div className="flex w-full flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
             <div className="flex flex-col items-center gap-3">
               <p className="text-6xl font-bold">2</p>
               <p className="text-2xl font-bold">¡Vizualizamos!</p>
@@ -78,18 +78,12 @@ export default function NewHousesPage() {
           <div className="flex w-full flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
             <div className="flex flex-col items-center gap-3">
               <p className="text-6xl font-bold">3</p>
-              <p className="text-2xl font-bold">Nos ocupamos!</p>
+              <p className="text-2xl font-bold">¡Nos ocupamos!</p>
             </div>
             <p>
               Por vos de todos los temas burocráticos y aburridos relacionados a temas legales en la
               municipalidad, barrio y demás entes gubernamentales para poder construir tu casa.
             </p>
-            <Link
-              className="hover:bg-primary mt-5 rounded-md border border-white px-6 py-2 transition-all"
-              href="/contacto"
-            >
-              Escribinos
-            </Link>
           </div>
           <div className="flex w-full flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
             <div className="flex flex-col items-center gap-3">
@@ -109,7 +103,7 @@ export default function NewHousesPage() {
             </Link>
           </div>
         </div>
-      </section> */}
+      </section>
     </main>
   );
 }

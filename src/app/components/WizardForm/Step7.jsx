@@ -1,6 +1,16 @@
+'use client'
+import { useM2 } from "@/app/context/M2Context";
+
+
 function Step7({formData, setFormData, next, prev}) {
-  const selectOption = (option) => {
-    setFormData({...formData, garage: option});
+  const { addM2 } = useM2();
+
+  const selectOption = (option, m2) => {
+    setFormData({
+      ...formData,
+      garage: option,
+    });
+    addM2(m2);    
   };
 
   return (
@@ -11,7 +21,7 @@ function Step7({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.garage === "Ninguno" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("Ninguno")}
+          onClick={() => selectOption("Ninguno", 0)}
         >
           <img alt="Ninguno" className="mx-auto mb-2" src="/form/12.png" />
           Ninguno
@@ -20,7 +30,7 @@ function Step7({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.garage === "1 coche" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("1 coche")}
+          onClick={() => selectOption("1 coche", 18)}
         >
           <img alt="1 coche" className="mx-auto mb-2" src="/form/13.png" />1 coche
         </div>
@@ -28,7 +38,7 @@ function Step7({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.garage === "2 coches" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("2 coches")}
+          onClick={() => selectOption("2 coches", 35)}
         >
           <img alt="2 coches" className="mx-auto mb-2" src="/form/14.png" />2 coches
         </div>
@@ -36,7 +46,7 @@ function Step7({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.garage === "3 coches" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("3 coches")}
+          onClick={() => selectOption("3 coches", 52)}
         >
           <img alt="3 coches" className="mx-auto mb-2" src="/form/15.png" />3 coches
         </div>
