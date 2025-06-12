@@ -59,7 +59,7 @@ function Step4({formData, setFormData, next, prev}) {
           }`}
         >
           <p>Baño simple</p>
-          <img alt="Baño simple" className="mx-auto mb-2" src="/form/9.png" />
+          <img alt="Baño simple" className="mx-auto md:h-48 mb-2" src="/form/9.png" />
           <select name="bathroom"  onChange={(e) => handleChange("two", e)}>
             <option value="Ninguno">Ninguno</option>
             <option value="1/simple">Uno</option>

@@ -22,10 +22,10 @@ export default function CasaIDpage() {
 
   return (
     <main className="mx-5 mt-52 md:mx-30">
-      <section className="my-30 flex flex-col gap-10 md:flex-row">
-        <div>
-          <h1 className="text-primary text-5xl font-bold">{house && house.title}</h1>
-          <small className="text-gray-600">{house && house.houseType}</small>
+      <section className="my-30 flex flex-col justify-center gap-10 md:flex-row">
+        <div className="flex flex-col items-start justify-center gap-2">
+          <h1 className="text-primary text-center text-5xl font-bold">{house && house.title}</h1>
+          <small className="text-center text-gray-600">{house && house.houseType}</small>
         </div>
         <p className="text-3xl">Diseñamos y construimos las mejores soluciones.</p>
       </section>
