@@ -66,77 +66,6 @@ export default function RemodelacionesPage() {
             <p>
               Lo primero que vamos a hacer es escucharte para entender que necesidades tenes y como
               te gustaría vivir para poder sorprenderte con ideas que vayan con vos y tu familia,
-              con tu vida familiar en casa.
-            </p>
-          </div>
-          <div className="flex w-full flex-col items-center justify-between gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
-            <div className="flex flex-col items-center gap-3">
-              <p className="text-6xl font-bold">2</p>
-              <p className="text-2xl font-bold">¡Vizualizamos!</p>
-            </div>
-            <p>
-              A partir de ahora es el momento de que sueñes y traigas todas las ideas que tengas en
-              tu mente, así las combinamos con las nuestras y juntos construimos el diseño de tu
-              casa.
-            </p>
-          </div>
-          <div className="flex w-full flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
-            <div className="flex flex-col items-center gap-3">
-              <p className="text-6xl font-bold">3</p>
-              <p className="text-2xl font-bold">¡Comenzamos!</p>
-            </div>
-            <p>
-              Ahora que ya tenes todos los permisos podemos construir la casa de tus hijos y nos
-              vamos a encargar de absolutamente todo para que puedan disfrutar en familia viendo
-              cómo se construye tu casa.
-            </p>
-            <Link
-              className="hover:bg-primary mt-5 rounded-md border border-white px-6 py-2 transition-all"
-              href="/contacto"
-            >
-              Escribinos
-            </Link>
-          </div>
-        </div>
-<<<<<<< HEAD
-        <div className="flex w-full flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
-          <div className="flex flex-col items-center gap-3">
-            <p className="text-6xl font-bold">4</p>
-            <p className="text-2xl font-bold">¡Comenzamos!</p>
-          </div>
-          <p>
-            Ahora que ya tenes todos los permisos podemos construir la casa de tus hijos y nos
-            vamos a encargar de absolutamente todo para que puedan disfrutar en familia viendo
-            cómo se construye tu casa
-          </p>
-          <Link
-            className="hover:bg-primary mt-5 rounded-md border border-white px-6 py-2 transition-all"
-            href="/contacto"
-          >
-            Escribinos
-          </Link>
-        </div>
-      </div>
-    </section> */}
-      <section
-        className="relative h-[200vh] bg-cover bg-center md:h-[90vh]"
-        id="boxs"
-        style={{backgroundImage: "url('./home5.jpg')"}}
-      >
-        <div className="h-full w-full bg-[#676B87] opacity-[0.43]" />
-        <div
-          className="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center gap-5 md:flex-row"
-          id="container"
-        >
-          <div className="flex flex-col items-center justify-between gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
-            <div className="flex flex-col items-center gap-3">
-              <p className="text-6xl font-bold">1</p>
-              <p className="text-2xl font-bold">¡Te Escuchamos!</p>
-            </div>
-            <p>Este es el primer paso para conseguir tu casa</p>
-            <p>
-              Lo primero que vamos a hacer es escucharte para entender que necesidades tenes y como
-              te gustaría vivir para poder sorprenderte con ideas que vayan con vos y tu familia,
               con tu vida familiar en casa
             </p>
           </div>
@@ -169,8 +98,6 @@ export default function RemodelacionesPage() {
             </Link>
           </div>
         </div>
-=======
->>>>>>> 32cbb3ff1125ef147edfe6c09fbcfb68906c6864
       </section>
     </main>
   );
