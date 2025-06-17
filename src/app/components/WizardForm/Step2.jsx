@@ -1,6 +1,13 @@
+'use client'
+import { useM2 } from "@/app/context/M2Context";
+
+
 function Step2({formData, setFormData, next, prev}) {
-  const selectOption = (option) => {
-    setFormData({...formData, mainBedroom: option});
+    const { addM2, totalsM2 } = useM2();
+
+   const selectOption = (option, m2) => {
+    setFormData({ ...formData, mainBedroom: option });
+    addM2(m2);
   };
 
   return (
@@ -13,7 +20,9 @@ function Step2({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.mainBedroom === "Simple" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("Simple")}
+          onClick={() => {
+            selectOption("Simple", 11.9);
+          }}
         >
           <img alt="Simple" className="mx-auto mb-2" src="/form/4.png" />
           Simple
@@ -22,7 +31,9 @@ function Step2({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.mainBedroom === "Con vestidor" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("Con vestidor")}
+          onClick={() => {
+            selectOption("Con vestidor", 19.6);
+          }}
         >
           <img alt="Con isla" className="mx-auto mb-2" src="/form/5.png" />
           Con vestidor

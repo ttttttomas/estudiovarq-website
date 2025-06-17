@@ -1,8 +1,22 @@
+'use client'
+import { useM2 } from "@/app/context/M2Context";
+
+
 function Step6({formData, setFormData, next, prev}) {
+  const { addM2 } = useM2();
+  const m2Data = {
+    "Planta baja": 0,
+    "1 piso": 6,
+    "2 pisos": 12
+  };
+
   const handleChange = (e) => {
+
     const {name, value} = e.target;
 
+    const newM2 = m2Data[value] || 0;
     setFormData({...formData, [name]: value});
+    addM2(newM2);
   };
 
   return (

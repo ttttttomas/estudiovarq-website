@@ -1,10 +1,14 @@
-// import Link from "next/link";
+import Link from "next/link";
 
 import Link from "next/link";
 
 export default function NewHousesPage() {
   return (
+<<<<<<< HEAD
     <main className="mt-10 items-center justify-center pt-32 md:mt-0 md:pt-52">
+=======
+    <main className="mt-10 items-center justify-center py-32 md:mt-0 md:pt-52">
+>>>>>>> 32cbb3ff1125ef147edfe6c09fbcfb68906c6864
       <div className="flex flex-col items-center justify-center gap-20 pb-32 md:flex-row">
         <section className="flex w-full max-w-[550px] flex-col items-start justify-center gap-5 px-10 text-center md:w-1/2 md:px-18">
           <p className="text-primary text-light text-2xl">Nuevas construcciones</p>
@@ -66,7 +70,7 @@ export default function NewHousesPage() {
               con tu vida familiar en casa
             </p>
           </div>
-          <div className="flex w-full flex-col items-center justify-between gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
+          <div className="flex w-full flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
             <div className="flex flex-col items-center gap-3">
               <p className="text-6xl font-bold">2</p>
               <p className="text-2xl font-bold">¡Vizualizamos!</p>
@@ -80,6 +84,19 @@ export default function NewHousesPage() {
           <div className="flex w-full flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
             <div className="flex flex-col items-center gap-3">
               <p className="text-6xl font-bold">3</p>
+<<<<<<< HEAD
+=======
+              <p className="text-2xl font-bold">¡Nos ocupamos!</p>
+            </div>
+            <p>
+              Por vos de todos los temas burocráticos y aburridos relacionados a temas legales en la
+              municipalidad, barrio y demás entes gubernamentales para poder construir tu casa.
+            </p>
+          </div>
+          <div className="flex w-full flex-col items-center justify-start gap-4 border border-[#001F3D75] bg-[#001F3D75] px-10 py-12 text-white md:size-96">
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-6xl font-bold">4</p>
+>>>>>>> 32cbb3ff1125ef147edfe6c09fbcfb68906c6864
               <p className="text-2xl font-bold">¡Comenzamos!</p>
             </div>
             <p>

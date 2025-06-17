@@ -1,8 +1,22 @@
+'use client'
+import { useM2 } from "@/app/context/M2Context";
+
 function Step5({formData, setFormData, next, prev}) {
+  const { addM2 } = useM2();
+
+  const m2Data = {
+    "6 personas": 13,
+    "8 personas": 18,
+    "10 personas": 20
+  };
+
   const handleChange = (e) => {
+
     const {name, value} = e.target;
 
+    const newM2 = m2Data[value] || 0;
     setFormData({...formData, [name]: value});
+    addM2(newM2);
   };
 
   return (
@@ -17,7 +31,7 @@ function Step5({formData, setFormData, next, prev}) {
           <select name="diningRoom" onChange={handleChange}>
             <option value="Ninguno">Ninguno</option>
             <option value="6 personas">6 personas</option>
-            <option value="12 personas">12 personas</option>
+            <option value="8 personas">8 personas</option>
             <option value="10 personas">10 personas</option>
           </select>
         </div>

@@ -1,8 +1,38 @@
-function Step4({formData, setFormData, next, prev}) {
-  const handleChange = (e) => {
-    const {name, value} = e.target;
+'use client'
+import { useM2 } from "@/app/context/M2Context";
+import { useRef } from "react";
 
-    setFormData({...formData, [name]: value});
+function Step4({formData, setFormData, next, prev}) {
+  const { addM2 } = useM2();
+  const prevValues = useRef({
+    one: 0,
+    two: 0,
+    three: 0,
+  });
+  const m2Data = {
+    "1/Toilette": 2.1,
+    "2/Toilette": 4.2,
+    "3/Toilette": 6.3,
+    "1/simple": 4.32,
+    "2/simple": 8.64,
+    "3/simple": 12.96,
+    "1/antebaño": 8.64,
+    "2/antebaño": 17.28,
+    "3/antebaño": 25.92,
+  };
+    const handleChange = (key, e) => {
+    const value = e.target.value;
+
+    const newM2 = m2Data[value] || 0;
+    const prevM2 = prevValues.current[key] || 0;
+
+    prevValues.current[key] = newM2;
+    
+    setFormData({
+      ...formData,
+      bathroom: value,
+    });
+    addM2(newM2);    
   };
 
   return (
@@ -16,7 +46,7 @@ function Step4({formData, setFormData, next, prev}) {
         >
           <p> Toilette</p>
           <img alt="Toilette" className="mx-auto mb-2" src="/form/10.png" />
-          <select name="bathroom" onChange={handleChange}>
+          <select name="bathroom" onChange={(e) => handleChange("one", e)}>
             <option value="Ninguno">Ninguno</option>
             <option value="1/Toilette">Uno</option>
             <option value="2/Toilette">Dos</option>
@@ -29,8 +59,8 @@ function Step4({formData, setFormData, next, prev}) {
           }`}
         >
           <p>Baño simple</p>
-          <img alt="Baño simple" className="mx-auto h-48 mb-2" src="/form/9.png" />
-          <select name="bathroom" onChange={handleChange}>
+          <img alt="Baño simple" className="mx-auto md:h-48 mb-2" src="/form/9.png" />
+          <select name="bathroom"  onChange={(e) => handleChange("two", e)}>
             <option value="Ninguno">Ninguno</option>
             <option value="1/simple">Uno</option>
             <option value="2/simple">Dos</option>
@@ -44,7 +74,7 @@ function Step4({formData, setFormData, next, prev}) {
         >
           <p> Con antebaño</p>
           <img alt="Con antebaño" className="mx-auto mb-2" src="/form/11.png" />
-          <select name="bathroom" onChange={handleChange}>
+          <select name="bathroom"  onChange={(e) => handleChange("three", e)}>
             <option value="Ninguno">Ninguno</option>
             <option value="1/antebaño">Uno</option>
             <option value="2/antebaño">Dos</option>

@@ -1,8 +1,16 @@
-function Step8({formData, setFormData, next, prev}) {
-  const selectOption = (option) => {
-    setFormData({...formData, anotherPlace: option});
-  };
+'use client'
+import { useM2 } from "@/app/context/M2Context";
 
+function Step8({formData, setFormData, next, prev}) {
+  const { addM2 } = useM2();
+
+  const selectOption = (option, m2) => {
+    setFormData({
+      ...formData,
+      anotherPlace: option,
+    });
+    addM2(m2);    
+  };
   return (
     <div className="space-y-4">
       <p className="text-center text-lg font-semibold">¿Qué otros ambientes te gustarían?</p>
@@ -11,7 +19,7 @@ function Step8({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.anotherPlace === "Estudio" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("Estudio")}
+          onClick={() => selectOption("Estudio", 10)}
         >
           <img alt="Estudio" className="mx-auto mb-2" src="/form/16.png" />
           Estudio
@@ -20,7 +28,7 @@ function Step8({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.anotherPlace === "Deposito pequeño" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("Deposito pequeño")}
+          onClick={() => selectOption("Deposito pequeño", 8)}
         >
           <img alt="Deposito pequeño" className="mx-auto mb-2" src="/form/17.png" />
           Deposito pequeño
@@ -29,7 +37,7 @@ function Step8({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.anotherPlace === "Lavadero" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("Lavadero")}
+          onClick={() => selectOption("Lavadero", 6)}
         >
           <img alt="Lavadero" className="mx-auto mb-2" src="/form/18.png" />
           Lavadero
@@ -38,7 +46,7 @@ function Step8({formData, setFormData, next, prev}) {
           className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.anotherPlace === "Playroom" ? "border-black" : "border-gray-300"
           }`}
-          onClick={() => selectOption("Playroom")}
+          onClick={() => selectOption("Playroom", 10)}
         >
           <img alt="Playroom" className="mx-auto mb-2" src="/form/19.png" />
           Playroom

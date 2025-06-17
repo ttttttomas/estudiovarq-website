@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/WizardForm/FinalStep.jsx", "src/app/components/WizardForm/Step9.jsx", "src/app/components/WizardForm/Step8.jsx", "src/app/components/WizardForm/Step7.jsx", "src/app/components/WizardForm/Step6.jsx", "src/app/components/WizardForm/Step5.jsx", "src/app/components/WizardForm/Step4.jsx", "src/app/components/WizardForm/Step3.jsx", "src/app/components/WizardForm/Step2.jsx", "src/app/components/WizardForm/Step1.jsx", "src/app/components/home/WizardForm.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/WizardForm/FinalStep.jsx", "src/app/components/WizardForm/Step9.jsx", "src/app/components/WizardForm/Step8.jsx", "src/app/components/WizardForm/Step7.jsx", "src/app/components/WizardForm/Step6.jsx", "src/app/components/WizardForm/Step5.jsx", "src/app/components/WizardForm/Step4.jsx", "src/app/components/WizardForm/Step3.jsx", "src/app/components/WizardForm/Step2.jsx", "src/app/components/WizardForm/Step1.jsx", "src/app/components/home/WizardForm.jsx", "src/app/context/M2Context.jsx"],
   "exclude": ["node_modules"]
 }

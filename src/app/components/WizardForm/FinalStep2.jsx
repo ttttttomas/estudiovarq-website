@@ -3,21 +3,20 @@ import { useRouter } from "next/navigation";
 import { Toaster, toast } from "sonner";
 import { useM2 } from "@/app/context/M2Context";
 
-function FinalStep({formData, setFormData, prev}) {
+function FinalStep2({formData, setFormData, prev}) {
   const { totalsM2 } = useM2();
   const router = useRouter();
   const dataToSend = {
     ...formData,
     totalsM2,
   };
+  
   const handleSubmit = () => {
-    axios.post("https://api-estudiovarq.iwebtecnology.com/wizardForm", dataToSend);
-    
+    axios.post("https://api-estudiovarq.iwebtecnology.com/wizardFormHouses", dataToSend);    
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
       router.push("/nosotros");
     }, 2000);
-    
   };
 
   return (
@@ -98,4 +97,4 @@ function FinalStep({formData, setFormData, prev}) {
   );
 }
 
-export default FinalStep;
+export default FinalStep2;

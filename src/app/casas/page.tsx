@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import HomeCard from "../components/HomeCard";
-import WizardForm from "../components/home/WizardForm";
+import WizardFormHouses from "../components/WizardFormHouses";
 
 import {House} from "@/types";
 
@@ -23,7 +23,7 @@ export default async function Casaspage() {
         ))}
       </section>
       <section className="my-20">
-        <WizardForm />
+        <WizardFormHouses />
       </section>
     </main>
   );

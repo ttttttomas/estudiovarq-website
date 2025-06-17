@@ -5,9 +5,11 @@ import Link from "next/link";
 
 import Instagram from "./components/Instagram";
 import Whatsapp from "./components/Whatsapp";
+// eslint-disable-next-line import/order
 import Header from "./components/Header";
 
 import "./globals.css";
+import {M2Provider} from "./context/M2Context";
 
 export const encodeSans = Encode_Sans({
   subsets: ["latin"],
@@ -29,7 +31,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
       </head>
       <body className={`${encodeSans.className} bg-white text-black`}>
         <Header />
-        {children}
+        <M2Provider>{children}</M2Provider>
         <footer className="flex flex-col items-center justify-between bg-[#FAFAF4] pt-8 shadow-sm shadow-black md:px-52">
           <section className="flex w-full flex-col items-center justify-between gap-5 md:flex-row md:gap-0">
             <Link href="/">
