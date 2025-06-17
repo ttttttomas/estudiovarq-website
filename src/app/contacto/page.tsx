@@ -1,5 +1,6 @@
 "use client";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
 import {toast, Toaster} from "sonner";
@@ -15,9 +16,26 @@ export default function ContactPage() {
     startDate: "",
     comments: "",
   });
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+
+  const onVerify = (token: string | null) => {
+    if (token) {
+      setCaptchaVerified(true);
+      console.log(token);
+    } else {
+      setCaptchaVerified(false);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!captchaVerified) {
+      toast.error("Por favor, completa el captcha antes de enviar el formulario");
+
+      return;
+    }
+
     console.log(formData);
 
     axios.post("https://api-estudiovarq.iwebtecnology.com/formContact", formData);
@@ -26,6 +44,8 @@ export default function ContactPage() {
       router.push("/");
     }, 2000);
   };
+
+  const API_KEY = "6LfYPWQrAAAAAAEInVbH-c4eHkt1iJZBYNbjze1k";
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;
@@ -130,11 +150,15 @@ export default function ContactPage() {
           onChange={onChangeTextarea}
         />
         <button
-          className="bg-primary w-full cursor-pointer rounded-md px-5 py-2 text-white"
+          className={`w-full cursor-pointer rounded-md px-5 py-2 text-white ${
+            captchaVerified ? "bg-primary" : "cursor-not-allowed bg-gray-400"
+          }`}
+          disabled={!captchaVerified}
           type="submit"
         >
           Enviar
         </button>
+        <ReCAPTCHA sitekey={API_KEY} size="normal" theme="light" onChange={onVerify} />
       </form>
     </main>
   );

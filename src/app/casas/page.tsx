@@ -10,6 +10,8 @@ export default async function Casaspage() {
 
   const houses = response.data;
 
+  console.log(response.data);
+
   return (
     <main className="mt-30">
       <h1 className="text-primary mt-10 text-center text-3xl font-bold">

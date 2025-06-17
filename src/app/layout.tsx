@@ -47,7 +47,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
               <Link href="/casas">Casas</Link>
               <Link href="/">Contactanos</Link>
               <li className="bg-primary mt-5 flex w-max items-start justify-center gap-5 rounded-sm p-1">
-                <img alt="facebook" src="./facebook.png" width="15px" />
+                <img alt="facebook" src="/facebook.png" width="15px" />
                 <Instagram />
               </li>
             </ul>
