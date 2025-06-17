@@ -18,7 +18,6 @@ const MySlider = () => {
         "https://api-estudiovarq.iwebtecnology.com/houses",
       );
       setHouses(response.data);
-      console.log(response.data);
     };
     fetchData();
   }, []);

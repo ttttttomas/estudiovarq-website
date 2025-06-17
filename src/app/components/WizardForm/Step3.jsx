@@ -32,7 +32,6 @@ function Step3({ formData, setFormData, next, prev }) {
     const prevM2 = prevValues.current[key] || 0;
 
     prevValues.current[key] = newM2;
-    console.log(newM2);
     
     setFormData({
       ...formData,
@@ -40,7 +39,6 @@ function Step3({ formData, setFormData, next, prev }) {
     });
     addM2(newM2);
 
-    console.log(formData);
     
   };
 

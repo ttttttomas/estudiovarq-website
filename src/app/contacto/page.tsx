@@ -21,7 +21,6 @@ export default function ContactPage() {
   const onVerify = (token: string | null) => {
     if (token) {
       setCaptchaVerified(true);
-      console.log(token);
     } else {
       setCaptchaVerified(false);
     }
@@ -35,8 +34,6 @@ export default function ContactPage() {
 
       return;
     }
-
-    console.log(formData);
 
     axios.post("https://api-estudiovarq.iwebtecnology.com/formContact", formData);
     toast.success("¡Formulario enviado!");
