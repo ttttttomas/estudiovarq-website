@@ -70,7 +70,7 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="h-[60vh] w-full bg-[#667978] bg-cover bg-center">
+            <div className="h-[60vh] w-full bg-[#667978] bg-cover bg-center md:h-[50vh]">
               <p className="px-8 pt-16 font-semibold">
                 Proyectamos y construimos casas pensadas en la convivencia familiar con el foco en
                 aumentar los momentos de felicidad en tu familia.
@@ -104,7 +104,7 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="bg-primary h-[60vh] w-full bg-cover bg-center">
+            <div className="bg-primary h-[60vh] w-full bg-cover bg-center md:h-[50vh]">
               <p className="px-8 pt-16 font-semibold">
                 Realizamos reformas estratégicas para potenciar el inmueble y mejorar la calidad de
                 vida de los que habitan tu casa.
