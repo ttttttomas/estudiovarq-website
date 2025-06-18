@@ -14,9 +14,9 @@ function Step8({formData, setFormData, next, prev}) {
   return (
     <div className="space-y-4">
       <p className="text-center text-lg font-semibold">¿Qué otros ambientes te gustarían?</p>
-      <div className="flex justify-center gap-6">
+      <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
         <div
-          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.anotherPlace === "Estudio" ? "border-black" : "border-gray-300"
           }`}
           onClick={() => selectOption("Estudio", 10)}
@@ -25,7 +25,7 @@ function Step8({formData, setFormData, next, prev}) {
           Estudio
         </div>
         <div
-          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.anotherPlace === "Deposito pequeño" ? "border-black" : "border-gray-300"
           }`}
           onClick={() => selectOption("Deposito pequeño", 8)}
@@ -34,7 +34,7 @@ function Step8({formData, setFormData, next, prev}) {
           Deposito pequeño
         </div>
         <div
-          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.anotherPlace === "Lavadero" ? "border-black" : "border-gray-300"
           }`}
           onClick={() => selectOption("Lavadero", 6)}
@@ -43,7 +43,7 @@ function Step8({formData, setFormData, next, prev}) {
           Lavadero
         </div>
         <div
-          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.anotherPlace === "Playroom" ? "border-black" : "border-gray-300"
           }`}
           onClick={() => selectOption("Playroom", 10)}

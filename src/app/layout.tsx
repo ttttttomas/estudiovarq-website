@@ -32,8 +32,8 @@ export default async function RootLayout({children}: {children: React.ReactNode}
       <body className={`${encodeSans.className} bg-white text-black`}>
         <Header />
         <M2Provider>{children}</M2Provider>
-        <footer className="flex flex-col items-center justify-between bg-[#FAFAF4] pt-8 shadow-sm shadow-black md:px-52">
-          <section className="flex w-full flex-col items-center justify-between gap-5 md:flex-row md:gap-0">
+        <footer className="flex flex-col items-center justify-between bg-[#FAFAF4] pt-8 shadow-sm shadow-black">
+          <section className="flex w-full flex-col items-center justify-between gap-5 md:flex-row md:gap-0 md:px-52">
             <Link href="/">
               <img alt="Logo" className="w-[250px]" src="/logofoooter.png" />
             </Link>
@@ -65,9 +65,11 @@ export default async function RootLayout({children}: {children: React.ReactNode}
               </ul>
             </div>
           </section>
-          <p className="mt-5 px-10 md:mt-0 md:px-0 md:py-5">
-            © Estudio Varq 2023 – Buenos Aires Todos los derechos reservados
-          </p>
+          <div className="my-5 items-center gap-3 text-center md:flex">
+            <p>© Estudio Varq 2025 – Buenos Aires</p>
+            <p className="hidden md:block">-</p>
+            <p>Todos los derechos reservados</p>
+          </div>
         </footer>
       </body>
     </html>

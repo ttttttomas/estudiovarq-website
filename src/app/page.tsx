@@ -57,7 +57,7 @@ export default async function HomePage() {
               style={{backgroundImage: "url('./home3.webp')"}}
             >
               <div className="bg-primary flex h-full w-full flex-col opacity-[0.53]" />
-              <div className="absolute top-40 right-0 bottom-0 left-0 flex flex-col gap-2 px-10 text-white">
+              <div className="absolute top-20 right-0 bottom-0 left-0 flex flex-col gap-2 px-10 text-white md:top-40">
                 <p className="text-start text-lg font-light">
                   Tenes un terreno y necesitas construir tu hogar.
                 </p>
@@ -70,7 +70,7 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="h-[50vh] w-full bg-[#667978] bg-cover bg-center">
+            <div className="h-[60vh] w-full bg-[#667978] bg-cover bg-center">
               <p className="px-8 pt-16 font-semibold">
                 Proyectamos y construimos casas pensadas en la convivencia familiar con el foco en
                 aumentar los momentos de felicidad en tu familia.
@@ -104,7 +104,7 @@ export default async function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="bg-primary h-[50vh] w-full bg-cover bg-center">
+            <div className="bg-primary h-[60vh] w-full bg-cover bg-center">
               <p className="px-8 pt-16 font-semibold">
                 Realizamos reformas estratégicas para potenciar el inmueble y mejorar la calidad de
                 vida de los que habitan tu casa.

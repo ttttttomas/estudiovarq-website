@@ -118,12 +118,12 @@ function WizardForm() {
         />
       </div>
       {steps[step]}
-      <p className="text-center pt-5 text-primary text-lg font-normal">
+      {/* <p className="text-center pt-5 text-primary text-lg font-normal">
         Este formulario esta patentado por Estudio VArq – Arquitectura. Todos
         los derechos de su uso son reservados. Queda prohibido su copia o
         comercializacion. En caso de infraccion se actuara legalmente ante la
         justicia
-      </p>
+      </p> */}
     </section>
   );
 }

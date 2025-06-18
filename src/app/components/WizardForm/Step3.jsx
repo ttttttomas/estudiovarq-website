@@ -47,10 +47,10 @@ function Step3({ formData, setFormData, next, prev }) {
       <p className="text-center text-lg font-semibold">
         ¿Y los dormitorios secundarios?
       </p>
-       <div className="flex justify-center gap-6">
+       <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
         {/* De 1 cama */}
         <div
-          className={`flex w-64 cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
+          className={`flex w-[45%] min-w-[140px] cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.one === "1cama" ? "border-black" : "border-gray-300"
           }`}
         >
@@ -71,7 +71,7 @@ function Step3({ formData, setFormData, next, prev }) {
 
         {/* De 2 camas */}
         <div
-          className={`flex w-64 cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
+          className={`flex w-[45%] min-w-[140px] cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.two === "2camas" ? "border-black" : "border-gray-300"
           }`}
         >
@@ -93,7 +93,7 @@ function Step3({ formData, setFormData, next, prev }) {
 
         {/* De 3 camas */}
         <div
-          className={`flex w-64 cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
+          className={`flex w-[45%] min-w-[140px] cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
             formData.three === "3camas" ? "border-black" : "border-gray-300"
           }`}
         >
