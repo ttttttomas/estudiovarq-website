@@ -28,8 +28,9 @@ export default async function RootLayout({children}: {children: React.ReactNode}
   return (
     <html lang="es">
       <Head>
-        {/* Google Analytics */}
+        {/* Google Analytics: ID G-BTBZZ8PV52 and G-Q8Y0EX67GW */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTBZZ8PV52" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8Y0EX67GW" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -37,6 +38,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-BTBZZ8PV52');
+              gtag('config', 'G-Q8Y0EX67GW');
             `,
           }}
         />
