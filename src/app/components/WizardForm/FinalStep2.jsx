@@ -15,7 +15,7 @@ function FinalStep2({formData, setFormData, prev}) {
     axios.post("https://api-estudiovarq.iwebtecnology.com/wizardFormHouses", dataToSend);    
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
-      router.push("/nosotros");
+      router.push("/gracias-cotizacion-calculadora");
     }, 2000);
   };
 

@@ -15,7 +15,7 @@ function FinalStep({formData, setFormData, prev}) {
     
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
-      router.push("/nosotros");
+      router.push("/gracias");
     }, 2000);
     
   };
