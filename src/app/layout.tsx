@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 
 import {Encode_Sans} from "next/font/google";
 import Link from "next/link";
+import Head from "next/head";
 
 import Instagram from "./components/Instagram";
 import Whatsapp from "./components/Whatsapp";
@@ -10,8 +11,6 @@ import Header from "./components/Header";
 
 import "./globals.css";
 import {M2Provider} from "./context/M2Context";
-
-import Head from "next/head";
 
 export const encodeSans = Encode_Sans({
   subsets: ["latin"],
@@ -37,7 +36,6 @@ export default async function RootLayout({children}: {children: React.ReactNode}
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-BTBZZ8PV52');
               gtag('config', 'G-Q8Y0EX67GW');
             `,
           }}
