@@ -38,7 +38,7 @@ export default function ContactPage() {
     axios.post("https://api-estudiovarq.iwebtecnology.com/formContact", formData);
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
-      router.push("/");
+      router.push("/gracias");
     }, 2000);
   };
 

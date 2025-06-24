@@ -15,7 +15,7 @@ function FinalStep({formData, setFormData, prev}) {
     
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
-      router.push("/gracias");
+      router.push("/gracias-cotizacion-calculadora");
     }, 2000);
     
   };
