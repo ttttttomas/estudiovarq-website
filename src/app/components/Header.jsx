@@ -4,7 +4,27 @@ import { useState,useEffect } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+
+  useEffect(() => {
+    let lastScroll = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll) {
+        setHidden(true); // hacia abajo
+      } else {
+        setHidden(false); // hacia arriba
+      }
+
+      lastScroll = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,7 +42,7 @@ export default function Header() {
   };
   return (
     <>
-      <header className="fixed top-0 z-20 flex flex-col md:flex-row w-full items-center justify-between xl:px-0 px-5 xl:justify-center xl:gap-96 border-b border-[#d6d6d6] bg-white py-4 text-black">
+      <header className={`fixed top-0 z-20 flex flex-col md:flex-row w-full items-center justify-between xl:px-0 px-5 xl:justify-center xl:gap-96 border-b border-[#d6d6d6] transition-transform duration-500 bg-white py-4 text-black ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
         <Link href="/">
           <img alt="Logo" src="/logo.png" className="w-64" />
         </Link>

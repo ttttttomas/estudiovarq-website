@@ -20,27 +20,27 @@ function FinalStep2({formData, setFormData, prev}) {
   };
 
   return (
-    <div className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <Toaster richColors position="bottom-center" />
       <p className="text-primary text-center text-2xl font-semibold">
         Completá tus datos y recibí los resultados en tu email
       </p>
       <input
-        required
+        required={true}
         className="w-full rounded border-gray-200 border p-2"
         placeholder="Nombre*"
         value={formData.name}
         onChange={(e) => setFormData({...formData, name: e.target.value})}
       />
       <input
-        required
+        required={true}
         className="w-full rounded border-gray-200 border p-2"
         placeholder="Apellido*"
         value={formData.lastName}
         onChange={(e) => setFormData({...formData, lastName: e.target.value})}
       />
       <input
-        required
+        required={true}
         className="w-full rounded border-gray-200 border p-2"
         placeholder="Email*"
         type="email"
@@ -48,28 +48,28 @@ function FinalStep2({formData, setFormData, prev}) {
         onChange={(e) => setFormData({...formData, email: e.target.value})}
       />
       <input
-        required
+        required={true}
         className="w-full rounded border-gray-200 border p-2"
         placeholder="Teléfono*"
         value={formData.phone}
         onChange={(e) => setFormData({...formData, phone: e.target.value})}
       />
       <input
-        required
+        required={true}
         className="w-full rounded border-gray-200 border p-2"
         placeholder="Ya tenés el terreno o casa donde vivís o quieras vivir*"
         value={formData.address}
         onChange={(e) => setFormData({...formData, address: e.target.value})}
       />
       <input
-        required
+        required={true}
         className="w-full rounded border-gray-200 border p-2"
         placeholder="¿En qué zona se encuentra?*"
         value={formData.zone}
         onChange={(e) => setFormData({...formData, zone: e.target.value})}
       />
       <input
-        required
+        required={true}
         className="w-full rounded border-gray-200 border p-2"
         placeholder="¿Cuándo te gustaria ponerte en marcha para iniciar este proyecto?*"
         value={formData.startDate}
@@ -88,12 +88,11 @@ function FinalStep2({formData, setFormData, prev}) {
         </button>
         <button
           className="cursor-pointer rounded bg-black px-4 py-2 text-white"
-          onClick={handleSubmit}
         >
           Enviar
         </button>
       </div>
-    </div>
+    </form>
   );
 }
 

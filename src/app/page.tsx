@@ -12,8 +12,8 @@ export default async function HomePage() {
         style={{backgroundImage: "url('./home.png')"}}
       >
         <div className="bg-primary h-full w-full opacity-[0.63]" />
-        <div className="absolute top-0 right-0 bottom-0 z-10 flex max-w-[600px] flex-col items-start justify-center gap-5 text-white xl:right-[270px]">
-          <h1 className="text-center text-4xl font-semibold md:text-start md:text-5xl">
+        <div className="absolute top-0 right-0 bottom-0 z-10 flex max-w-[600px] flex-col items-start justify-center gap-5 text-white 2xl:right-[150px]">
+          <h1 className="text-center text-4xl font-semibold md:text-start">
             Podemos diseñar y construir tu casa para que tengas más momentos felices con tu familia
           </h1>
           <p className="text-center text-xl font-medium md:text-start md:text-2xl md:font-semibold">

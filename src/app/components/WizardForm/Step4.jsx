@@ -37,7 +37,7 @@ function Step4({formData, setFormData, next, prev}) {
 
   return (
     <div className="space-y-4">
-      <p className="text-center text-lg font-semibold">¿Cuántos baños necesitas?</p>
+      <p className="text-center text-primary text-lg font-semibold">¿Cuántos baños necesitas?</p>
       <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
         <div
           className={`flex w-[45%] min-w-[140px] cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${

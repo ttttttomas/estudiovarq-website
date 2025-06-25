@@ -21,15 +21,21 @@ export default function CasaIDpage() {
   }, [id]);
 
   return (
-    <main className="mx-5 mt-52 mb-10 md:mx-30">
-      <section className="my-30 flex flex-col items-center justify-center gap-10 md:flex-row">
-        <div>
-          <h1 className="text-primary text-center text-5xl font-bold">{house && house.title}</h1>
-          <small className="text-gray-600">{house && house.houseType}</small>
+    <main className="mx-5 mt-36 mb-10 md:mx-10 md:mt-32">
+      <section className="flex flex-col items-center justify-around md:mb-10 md:flex-row md:gap-50">
+        <div className="flex flex-col gap-2">
+          <h1 className="text-primary text-center text-4xl font-bold md:text-5xl">
+            {house && house.title}
+          </h1>
+          <small className="text-center text-gray-600 md:text-start">
+            {house && house.houseType}
+          </small>
         </div>
-        <p className="text-3xl">Diseñamos y construimos las mejores soluciones.</p>
+        <p className="text-md my-2 text-center md:my-5 md:text-start md:text-3xl">
+          Diseñamos y construimos las mejores soluciones.
+        </p>
       </section>
-      <section className="grid-cols-[repeat(auto-fill, minmax(250px, 1fr))] mx-auto grid w-3/4 flex-col place-content-center place-items-center gap-2 md:grid-cols-2">
+      <section className="grid-cols-[repeat(auto-fill, minmax(250px, 1fr))] mx-auto grid flex-col place-content-center place-items-center gap-2 md:w-3/4 md:grid-cols-2">
         {house &&
           house.images.map((image) => (
             <img

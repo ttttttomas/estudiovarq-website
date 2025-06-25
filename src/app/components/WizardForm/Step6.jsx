@@ -20,7 +20,7 @@ function Step6({formData, setFormData, next, prev}) {
   };
   return (
     <div className="space-y-4">
-      <p className="text-center text-lg font-semibold">Living, ¿para cuántas personas?</p>
+      <p className="text-center text-primary text-lg font-semibold">Living, ¿para cuántas personas?</p>
       <div className="flex justify-center gap-6">
         <div
           className={`flex w-96 cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${

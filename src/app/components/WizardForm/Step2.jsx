@@ -12,7 +12,7 @@ function Step2({formData, setFormData, next, prev}) {
 
   return (
     <div className="space-y-4">
-      <p className="text-center text-lg font-semibold">
+      <p className="text-center text-primary text-lg font-semibold">
         ¿Cómo te gustaría el dormitorio principal?
       </p>
       <div className="flex justify-center gap-6">

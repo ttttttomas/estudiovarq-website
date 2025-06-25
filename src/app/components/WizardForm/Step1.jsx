@@ -14,7 +14,7 @@ function Step1({ formData, setFormData, next }) {
 
   return (
     <div className="space-y-4">
-      <p className="text-center text-lg font-semibold">
+      <p className="text-center text-primary text-lg font-semibold">
         ¿Qué tipo de cocina te gusta más?
       </p>
       <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">

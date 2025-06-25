@@ -11,7 +11,7 @@ export default async function Casaspage() {
   const houses = response.data;
 
   return (
-    <main className="mt-30">
+    <main className="mt-40">
       <h1 className="text-primary mt-10 text-center text-3xl font-bold">
         Te mostramos algunas casas que podemos hacer!
       </h1>

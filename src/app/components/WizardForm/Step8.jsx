@@ -13,7 +13,7 @@ function Step8({formData, setFormData, next, prev}) {
   };
   return (
     <div className="space-y-4">
-      <p className="text-center text-lg font-semibold">¿Qué otros ambientes te gustarían?</p>
+      <p className="text-center text-primary text-lg font-semibold">¿Qué otros ambientes te gustarían?</p>
       <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
         <div
           className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${

@@ -44,7 +44,7 @@ function Step3({ formData, setFormData, next, prev }) {
 
   return (
     <div className="space-y-4">
-      <p className="text-center text-lg font-semibold">
+      <p className="text-center text-primary text-lg font-semibold">
         ¿Y los dormitorios secundarios?
       </p>
        <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
