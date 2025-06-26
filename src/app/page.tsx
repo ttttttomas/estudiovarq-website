@@ -12,15 +12,16 @@ export default async function HomePage() {
         style={{backgroundImage: "url('./home.png')"}}
       >
         <div className="bg-primary h-full w-full opacity-[0.63]" />
-        <div className="absolute top-0 right-0 bottom-0 z-10 flex max-w-[600px] flex-col items-start justify-center gap-5 text-white 2xl:right-[150px]">
-          <h1 className="text-center text-4xl font-semibold md:text-start">
-            Podemos diseñar y construir tu casa para que tengas más momentos felices con tu familia
+        <div className="absolute top-0 right-0 bottom-30 z-10 flex max-w-[600px] flex-col items-start justify-center gap-5 text-white 2xl:right-[340px]">
+          <h1 className="text-center text-5xl font-semibold md:text-start">
+            Podemos diseñar y <br /> construir tu casa para que <br /> tengas más momentos <br />{" "}
+            felices con tu familia
           </h1>
-          <p className="text-center text-xl font-medium md:text-start md:text-2xl md:font-semibold">
+          <p className="text-center text-xl font-medium md:text-start md:text-2xl">
             Arquitectos especializados en diseñar, remodelar y construir hogares felices.
           </p>
           <Link
-            className="hover:bg-primary mx-auto rounded-md border border-white px-5 py-2 transition-all md:mx-0"
+            className="hover:bg-primary mx-auto rounded-md border border-white px-7 py-2 transition-all md:mx-0"
             href="/contacto"
           >
             Escribinos

@@ -103,14 +103,19 @@ function WizardForm() {
         setFormData={setFormData}
       />
     ),
-    10: <FinalStep2 formData={formData} prev={prev} setFormData={setFormData} />,
+    10: (
+      <FinalStep2 formData={formData} prev={prev} setFormData={setFormData} />
+    ),
   };
 
   return (
     <section className="mx-auto mt-20 w-full max-w-5xl rounded-xl bg-white p-6 shadow-sm shadow-black/30">
-      <h2 className="mb-4 text-center text-primary text-4xl font-bold">
-        ¡Imaginemos tu casa juntos!
-      </h2>
+      <div className="flex flex-col items-center justify-center">
+        <h2 className="text-center text-primary text-4xl font-bold">
+          ¡Imaginemos tu casa juntos!
+        </h2>
+        <h3 className="my-5">Empecemos:</h3>
+      </div>
       <div className="mb-4 h-2 w-full rounded-full bg-gray-200">
         <div
           className="h-2 rounded-full bg-black"
