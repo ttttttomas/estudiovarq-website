@@ -3,12 +3,32 @@
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
 import axios from "axios";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import PhotoSwipe from "photoswipe";
+
+import "photoswipe/style.css";
 
 import {House} from "@/types";
 
 export default function CasaIDpage() {
   const {id} = useParams();
   const [house, setHouse] = useState<House>();
+
+  useEffect(() => {
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: "#gallery",
+      children: "a",
+      pswpModule: PhotoSwipe,
+      maxWidthToAnimate: 800,
+      zoom: false,
+      wheelToZoom: false,
+      imageClickAction: "close",
+      padding: {top: 20, bottom: 20, left: 50, right: 50},
+      bgOpacity: 0.8,
+    });
+
+    lightbox.init();
+  }, []);
 
   useEffect(() => {
     const getHouse = async () => {
@@ -35,15 +55,22 @@ export default function CasaIDpage() {
           Diseñamos y construimos las mejores soluciones.
         </p>
       </section>
-      <section className="grid-cols-[repeat(auto-fill, minmax(250px, 1fr))] mx-auto grid flex-col place-content-center place-items-center gap-2 md:w-3/4 md:grid-cols-2">
+      <section className="mx-auto columns-1 gap-4 md:w-3/4 md:columns-2 lg:columns-3" id="gallery">
         {house &&
           house.images.map((image) => (
-            <img
+            <a
               key={image}
-              alt={house.title}
-              className="block h-auto w-full object-cover"
-              src={image}
-            />
+              className="mb-4 block"
+              data-pswp-height="800"
+              data-pswp-width="1200"
+              href={image}
+            >
+              <img
+                alt={house.title}
+                className="w-full break-inside-avoid object-cover"
+                src={image}
+              />
+            </a>
           ))}
       </section>
     </main>
