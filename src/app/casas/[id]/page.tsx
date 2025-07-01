@@ -19,8 +19,9 @@ export default function CasaIDpage() {
       gallery: "#gallery",
       children: "a",
       pswpModule: PhotoSwipe,
-      maxWidthToAnimate: 800,
-      zoom: false,
+      maxWidthToAnimate: 2000,
+      zoom: true,
+      showHideOpacity: true,
       wheelToZoom: false,
       imageClickAction: "close",
       padding: {top: 20, bottom: 20, left: 50, right: 50},
@@ -61,13 +62,14 @@ export default function CasaIDpage() {
             <a
               key={image}
               className="mb-4 block"
+              data-pswp-aspect-ratio="1"
               data-pswp-height="800"
               data-pswp-width="1200"
               href={image}
             >
               <img
                 alt={house.title}
-                className="w-full break-inside-avoid object-cover"
+                className="w-full break-inside-avoid object-contain"
                 src={image}
               />
             </a>

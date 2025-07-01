@@ -5,11 +5,30 @@ function Step8({formData, setFormData, next, prev}) {
   const { addM2 } = useM2();
 
   const selectOption = (option, m2) => {
+    // Convertir el string actual a array para manipulación
+    const currentPlaces = formData.anotherPlace ? formData.anotherPlace.split(", ") : [];
+    
+    // Buscar si la opción ya está seleccionada
+    const isSelected = currentPlaces.includes(option);
+    
+    let newPlaces;
+    if (isSelected) {
+      // Si ya está seleccionada, la removemos y restamos los m2
+      newPlaces = currentPlaces.filter(place => place !== option);
+      addM2(-m2); // Restamos los m2
+    } else {
+      // Si no está seleccionada, la agregamos y sumamos los m2
+      newPlaces = [...currentPlaces, option];
+      addM2(m2); // Sumamos los m2
+    }
+    
+    // Convertir el array de nuevo a string
+    const newPlacesString = newPlaces.join(", ");
+    
     setFormData({
       ...formData,
-      anotherPlace: option,
+      anotherPlace: newPlacesString,
     });
-    addM2(m2);    
   };
   return (
     <div className="space-y-4">
@@ -17,7 +36,7 @@ function Step8({formData, setFormData, next, prev}) {
       <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
         <div
           className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.anotherPlace === "Estudio" ? "border-black" : "border-gray-300"
+            formData.anotherPlace?.includes("Estudio") ? "border-black" : "border-gray-300"
           }`}
           onClick={() => selectOption("Estudio", 10)}
         >
@@ -26,7 +45,7 @@ function Step8({formData, setFormData, next, prev}) {
         </div>
         <div
           className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.anotherPlace === "Deposito pequeño" ? "border-black" : "border-gray-300"
+            formData.anotherPlace?.includes("Deposito pequeño") ? "border-black" : "border-gray-300"
           }`}
           onClick={() => selectOption("Deposito pequeño", 8)}
         >
@@ -35,7 +54,7 @@ function Step8({formData, setFormData, next, prev}) {
         </div>
         <div
           className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.anotherPlace === "Lavadero" ? "border-black" : "border-gray-300"
+            formData.anotherPlace?.includes("Lavadero") ? "border-black" : "border-gray-300"
           }`}
           onClick={() => selectOption("Lavadero", 6)}
         >
@@ -44,7 +63,7 @@ function Step8({formData, setFormData, next, prev}) {
         </div>
         <div
           className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.anotherPlace === "Playroom" ? "border-black" : "border-gray-300"
+            formData.anotherPlace?.includes("Playroom") ? "border-black" : "border-gray-300"
           }`}
           onClick={() => selectOption("Playroom", 10)}
         >
