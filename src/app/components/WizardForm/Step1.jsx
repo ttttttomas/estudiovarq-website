@@ -19,8 +19,8 @@ function Step1({ formData, setFormData, next }) {
       </p>
       <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.kitchen === "Simple" ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.kitchen === "Simple" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => {
             selectOption("Simple", 9.72)
@@ -30,8 +30,8 @@ function Step1({ formData, setFormData, next }) {
           Simple
         </div>
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.kitchen === "Con isla" ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.kitchen === "Con isla" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => {
             selectOption("Con isla", 13.6);
@@ -41,9 +41,9 @@ function Step1({ formData, setFormData, next }) {
           Con isla
         </div>
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
             formData.kitchen === "Con comedor"
-              ? "border-black"
+              ? "border-black bg-gray-200"
               : "border-gray-300"
           }`}
           onClick={() => {

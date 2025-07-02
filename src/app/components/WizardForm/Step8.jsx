@@ -35,8 +35,8 @@ function Step8({formData, setFormData, next, prev}) {
       <p className="text-center text-primary text-lg font-semibold">¿Qué otros ambientes te gustarían?</p>
       <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.anotherPlace?.includes("Estudio") ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.anotherPlace?.includes("Estudio") ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => selectOption("Estudio", 10)}
         >
@@ -44,8 +44,8 @@ function Step8({formData, setFormData, next, prev}) {
           Estudio
         </div>
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.anotherPlace?.includes("Deposito pequeño") ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.anotherPlace?.includes("Deposito pequeño") ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => selectOption("Deposito pequeño", 8)}
         >
@@ -53,8 +53,8 @@ function Step8({formData, setFormData, next, prev}) {
           Deposito pequeño
         </div>
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.anotherPlace?.includes("Lavadero") ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.anotherPlace?.includes("Lavadero") ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => selectOption("Lavadero", 6)}
         >
@@ -62,8 +62,8 @@ function Step8({formData, setFormData, next, prev}) {
           Lavadero
         </div>
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.anotherPlace?.includes("Playroom") ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.anotherPlace?.includes("Playroom") ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => selectOption("Playroom", 10)}
         >

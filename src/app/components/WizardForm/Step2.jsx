@@ -17,8 +17,8 @@ function Step2({formData, setFormData, next, prev}) {
       </p>
       <div className="flex justify-center gap-6">
         <div
-          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.mainBedroom === "Simple" ? "border-black" : "border-gray-300"
+          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.mainBedroom === "Simple" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => {
             selectOption("Simple", 11.9);
@@ -28,8 +28,8 @@ function Step2({formData, setFormData, next, prev}) {
           Simple
         </div>
         <div
-          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.mainBedroom === "Con vestidor" ? "border-black" : "border-gray-300"
+          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.mainBedroom === "Con vestidor" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => {
             selectOption("Con vestidor", 19.6);

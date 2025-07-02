@@ -18,8 +18,8 @@ function Step7({formData, setFormData, next, prev}) {
       <p className="text-center text-primary text-lg font-semibold">Garage ¿para cuántos coches?</p>
       <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.garage === "Ninguno" ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.garage === "Ninguno" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => selectOption("Ninguno", 0)}
         >
@@ -27,24 +27,24 @@ function Step7({formData, setFormData, next, prev}) {
           Ninguno
         </div>
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.garage === "1 coche" ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.garage === "1 coche" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => selectOption("1 coche", 18)}
         >
           <img alt="1 coche" className="mx-auto mb-2" src="/form/13.png" />1 coche
         </div>
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.garage === "2 coches" ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.garage === "2 coches" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => selectOption("2 coches", 35)}
         >
           <img alt="2 coches" className="mx-auto mb-2" src="/form/14.png" />2 coches
         </div>
         <div
-          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.garage === "3 coches" ? "border-black" : "border-gray-300"
+          className={`w-[45%] min-w-[140px] cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+            formData.garage === "3 coches" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => selectOption("3 coches", 52)}
         >
