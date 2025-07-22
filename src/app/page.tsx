@@ -5,19 +5,19 @@ import Slider from "./components/home/Slider";
 
 export default async function HomePage() {
   return (
-    <main className="mt-18 md:mt-0">
+    <main className="mt-30 md:mt-0">
       <section
         className="relative h-screen bg-cover bg-center bg-no-repeat md:h-[100vh]"
         id="home"
         style={{backgroundImage: "url('./home.png')"}}
       >
         <div className="bg-primary h-full w-full opacity-[0.63]" />
-        <div className="absolute top-0 right-0 bottom-30 z-10 flex max-w-[600px] flex-col items-start justify-center gap-5 text-white 2xl:right-[340px]">
-          <h1 className="text-center text-5xl font-semibold md:text-start">
-            Podemos diseñar y <br /> construir tu casa para que <br /> tengas más momentos <br />{" "}
-            felices con tu familia
+        <div className="absolute top-0 right-0 bottom-30 z-10 flex max-w-[600px] flex-col items-start justify-center gap-6 px-4 text-white md:px-0 2xl:right-[340px]">
+          <h1 className="text-start text-4xl font-semibold md:text-5xl">
+            Podemos diseñar y construir tu casa para que <br /> tengas más momentos <br /> felices
+            con tu familia
           </h1>
-          <p className="text-center text-xl font-medium md:text-start md:text-2xl">
+          <p className="text-start text-lg font-medium md:text-2xl">
             Arquitectos especializados en diseñar, remodelar y construir hogares felices.
           </p>
           <Link
