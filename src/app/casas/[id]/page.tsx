@@ -62,9 +62,9 @@ export default function CasaIDpage() {
             <a
               key={image}
               className="mb-4 block"
-              data-pswp-aspect-ratio="1"
-              data-pswp-height="800"
-              data-pswp-width="1200"
+              data-pswp-aspect-ratio="cover"
+              data-pswp-height="1000"
+              data-pswp-width="12ñ00"
               href={image}
             >
               <img
