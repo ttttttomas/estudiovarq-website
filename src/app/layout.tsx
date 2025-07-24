@@ -43,16 +43,6 @@ export default async function RootLayout({children}: {children: React.ReactNode}
             `,
           }}
         />
-        {/* Google Tag Manager */}
-        <Script id="gtm-script" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-5JRV935');
-          `}
-        </Script>
         <meta content="Estudio Varq" name="author" />
         <meta content="Estudio Varq" property="og:title" />
         <meta content="Estudio Varq" property="og:site_name" />
@@ -72,10 +62,29 @@ export default async function RootLayout({children}: {children: React.ReactNode}
         <meta content="summary_large_image" name="twitter:card" />
       </Head>
       <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5JRV935');
+          `}
+        </Script>
         <link href="./Favicon.png" rel="icon" type="image/x-icon" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
       </head>
       <body className={`${encodeSans.className} bg-white text-black`}>
+        <noscript>
+          <iframe
+            height="0"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5JRV935"
+            style={{display: "none", visibility: "hidden"}}
+            title="google analytics"
+            width="0"
+          />
+        </noscript>
         <Header />
         <M2Provider>{children}</M2Provider>
         <footer className="flex flex-col items-center justify-between bg-[#FAFAF4] pt-8 shadow-sm shadow-black">
@@ -123,15 +132,6 @@ export default async function RootLayout({children}: {children: React.ReactNode}
           </div>
         </footer>
       </body>
-      <noscript>
-        <iframe
-          height="0"
-          src="https://www.googletagmanager.com/ns.html?id=GTM-5JRV935"
-          style={{display: "none", visibility: "hidden"}}
-          title="google analytics"
-          width="0"
-        />
-      </noscript>
     </html>
   );
 }
