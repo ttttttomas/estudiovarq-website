@@ -3,8 +3,8 @@
 import {useEffect, useState} from "react";
 import {useParams} from "next/navigation";
 import axios from "axios";
-import PhotoSwipeLightbox from "photoswipe/lightbox";
-import PhotoSwipe from "photoswipe";
+// import PhotoSwipeLightbox from "photoswipe/lightbox";
+// import PhotoSwipe from "photoswipe";
 
 import "photoswipe/style.css";
 
@@ -14,22 +14,22 @@ export default function CasaIDpage() {
   const {id} = useParams();
   const [house, setHouse] = useState<House>();
 
-  useEffect(() => {
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: "#gallery",
-      children: "a",
-      pswpModule: PhotoSwipe,
-      maxWidthToAnimate: 2000,
-      zoom: true,
-      showHideOpacity: true,
-      wheelToZoom: false,
-      imageClickAction: "close",
-      padding: {top: 20, bottom: 20, left: 50, right: 50},
-      bgOpacity: 0.8,
-    });
+  // useEffect(() => {
+  //   const lightbox = new PhotoSwipeLightbox({
+  //     gallery: "#gallery",
+  //     children: "a",
+  //     pswpModule: PhotoSwipe,
+  //     maxWidthToAnimate: 2000,
+  //     zoom: true,
+  //     showHideOpacity: true,
+  //     wheelToZoom: false,
+  //     imageClickAction: "close",
+  //     padding: {top: 20, bottom: 20, left: 50, right: 50},
+  //     bgOpacity: 0.8,
+  //   });
 
-    lightbox.init();
-  }, []);
+  //   lightbox.init();
+  // }, []);
 
   useEffect(() => {
     const getHouse = async () => {
@@ -56,23 +56,18 @@ export default function CasaIDpage() {
           Diseñamos y construimos las mejores soluciones.
         </p>
       </section>
-      <section className="mx-auto columns-1 gap-4 md:w-3/4 md:columns-2 lg:columns-3" id="gallery">
+      <section className="mx-auto w-full columns-1 gap-4 md:w-3/4 lg:columns-2" id="gallery">
         {house &&
           house.images.map((image) => (
-            <a
-              key={image}
-              className="mb-4 block"
-              data-pswp-aspect-ratio="cover"
-              data-pswp-height="1000"
-              data-pswp-width="12ñ00"
-              href={image}
-            >
-              <img
-                alt={house.title}
-                className="w-full break-inside-avoid object-contain"
-                src={image}
-              />
-            </a>
+            // <a
+            //   key={image}
+            //   className="mb-4 block"
+            //   data-pswp-aspect-ratio="cover"
+            //   data-pswp-height="600"
+            //   data-pswp-width="1000"
+            //   href={image}
+            // >
+            <img key={image} alt={house.title} className="mb-4 w-auto" src={image} />
           ))}
       </section>
     </main>

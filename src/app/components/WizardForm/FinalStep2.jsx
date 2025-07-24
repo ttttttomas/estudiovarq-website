@@ -8,11 +8,12 @@ function FinalStep2({formData, setFormData, prev}) {
   const router = useRouter();
   const dataToSend = {
     ...formData,
+    phone: "549" + formData.phone,
     totalsM2,
   };
-  
   const handleSubmit = () => {
     axios.post("https://api-estudiovarq.iwebtecnology.com/wizardFormHouses", dataToSend);    
+    
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
       router.push("/gracias-cotizacion-calculadora");

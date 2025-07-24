@@ -8,6 +8,7 @@ function FinalStep({formData, setFormData, prev}) {
   const router = useRouter();
   const dataToSend = {
     ...formData,
+    phone: "549" + formData.phone,
     totalsM2,
   };
   const handleSubmit = () => {
@@ -17,7 +18,6 @@ function FinalStep({formData, setFormData, prev}) {
     setTimeout(() => {
       router.push("/gracias-cotizacion-calculadora");
     }, 2000);
-    
   };
 
   return (
