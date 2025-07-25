@@ -69,7 +69,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-5JRV935');
+            })(window,document,'script','dataLayer','GTM-5JRV935S');
           `}
         </Script>
         <link href="./Favicon.png" rel="icon" type="image/x-icon" />
@@ -79,7 +79,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
         <noscript>
           <iframe
             height="0"
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5JRV935"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5JRV935S"
             style={{display: "none", visibility: "hidden"}}
             title="google analytics"
             width="0"
