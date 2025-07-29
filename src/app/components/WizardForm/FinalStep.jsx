@@ -11,13 +11,14 @@ function FinalStep({formData, setFormData, prev}) {
     phone: "549" + formData.phone,
     totalsM2,
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     axios.post("https://api-estudiovarq.iwebtecnology.com/wizardForm", dataToSend);
     
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
       router.push("/gracias-cotizacion-calculadora");
-    }, 2000);
+    }, 1000);
   };
 
   return (
