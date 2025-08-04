@@ -107,14 +107,14 @@ function WizardForm() {
   };
 
   return (
-    <section className="mx-auto mt-20 w-full max-w-5xl rounded-xl bg-white p-6 shadow-sm shadow-black/30">
+    <section className={`mx-auto mt-20 w-full max-w-5xl flex flex-col justify-center gap-5 rounded-xl ${step === 10 ? "md:h-auto" : "md:h-[70vh]"} bg-white p-6 shadow-sm shadow-black/30`}>
       <div className="flex flex-col items-center justify-center">
-      <h2 className="text-center text-primary text-4xl font-bold">
-        ¡Imaginemos tu casa juntos!
-      </h2>
-      <h3 className="my-5">Empecemos:</h3>
+        <h2 className="text-center text-primary text-4xl font-bold">
+          ¡Imaginemos tu casa juntos!
+        </h2>
+        <h3 className="my-5">Empecemos:</h3>
       </div>
-      <div className="mb-4 h-2 w-full rounded-full bg-gray-200">
+      <div className="mb-4 w-full rounded-full bg-gray-200">
         <div
           className="h-2 rounded-full bg-black"
           style={{ width: `${(step / 10) * 100}%` }}

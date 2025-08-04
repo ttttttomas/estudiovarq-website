@@ -38,15 +38,15 @@ export default async function HomePage() {
           style={{backgroundImage: "url('./home2.jpg')"}}
         >
           <div className="bg-primary flex h-full w-full flex-col opacity-[0.63]" />
-          <div className="absolute top-40 right-0 bottom-0 px-14 text-white">
-            <p className="text-start text-2xl font-light">
+          <div className="absolute top-40 right-0 bottom-0 left-0 px-10 text-white">
+            <p className="text-center text-2xl font-light">
               Diseñamos y construimos las ultimas tendencias.
             </p>
-            <p className="text-start text-7xl font-bold md:text-center">Nuestros servicios</p>
+            <p className="mx-auto text-center text-7xl font-bold">Nuestros servicios</p>
           </div>
           <img
             alt="circulo"
-            className="absolute right-34 bottom-8 md:right-27"
+            className="absolute right-24 bottom-8 md:right-27"
             src="./ciruclo.png"
           />
         </div>

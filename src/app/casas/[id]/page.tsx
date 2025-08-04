@@ -56,7 +56,7 @@ export default function CasaIDpage() {
           Diseñamos y construimos las mejores soluciones.
         </p>
       </section>
-      <section className="mx-auto w-full columns-1 gap-4 md:w-3/4 lg:columns-2" id="gallery">
+      <section className="mx-auto w-full columns-1 gap-4 md:w-3/4" id="gallery">
         {house &&
           house.images.map((image) => (
             // <a
@@ -67,7 +67,7 @@ export default function CasaIDpage() {
             //   data-pswp-width="1000"
             //   href={image}
             // >
-            <img key={image} alt={house.title} className="mb-4 w-auto" src={image} />
+            <img key={image} alt={house.title} className="mx-auto my-4 w-auto" src={image} />
           ))}
       </section>
     </main>
