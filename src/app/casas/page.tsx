@@ -19,11 +19,11 @@ export default async function Casaspage() {
         <HomeCard house={houses[0]} />
         <HomeCard house={houses[2]} />
         <HomeCard house={houses[4]} />
-        <HomeCard house={houses[6]} />
+        <HomeCard house={houses[7]} />
         <HomeCard house={houses[3]} />
         <HomeCard house={houses[1]} />
+        <HomeCard house={houses[6]} />
         <HomeCard house={houses[5]} />
-        <HomeCard house={houses[7]} />
         <HomeCard house={houses[8]} />
         <HomeCard house={houses[9]} />
         <HomeCard house={houses[10]} />

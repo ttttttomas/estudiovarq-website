@@ -67,7 +67,13 @@ export default function CasaIDpage() {
             //   data-pswp-width="1000"
             //   href={image}
             // >
-            <img key={image} alt={house.title} className="mx-auto my-4 w-auto" src={image} />
+            <img
+              key={image}
+              alt={house.title}
+              className="mx-auto my-4 h-full w-auto"
+              loading="lazy"
+              src={image}
+            />
           ))}
       </section>
     </main>
