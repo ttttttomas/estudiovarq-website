@@ -6,29 +6,20 @@ import { useM2 } from "@/app/context/M2Context";
 function FinalStep({formData, setFormData, prev}) {
   const { totalsM2 } = useM2();
   const router = useRouter();
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  try {
-    // Validación simple (puedes hacerla más avanzada si es necesario)
-    if (!formData.name || !formData.lastName || !formData.phone || !formData.email || !formData.address || !formData.zone || !formData.startDate || !formData.comments) {
-      throw new Error("Por favor completa todos los campos obligatorios.");
-    }
-    const dataToSend = {
-      ...formData,
-      phone: "+549" + formData.phone,
-      totalsM2,
-    };
-    await axios.post("https://api-estudioarq.iwebtecnology.com/wizardForm", dataToSend);
+  const dataToSend = {
+    ...formData,
+    phone: "549" + formData.phone,
+    totalsM2,
+  };
+   const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post("https://api-estudiovarq.iwebtecnology.com/wizardForm", dataToSend);    
+    
     toast.success("¡Formulario enviado!");
     setTimeout(() => {
       router.push("/gracias-cotizacion-calculadora");
-    }, 1500);
-
-  } catch (error) {
-    toast.error(error.message || "Ocurrió un error al enviar el formulario.");
-  }
-};
+    }, 1000);
+  };
 
 
   return (
