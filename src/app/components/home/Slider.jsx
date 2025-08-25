@@ -43,7 +43,7 @@ const MySlider = () => {
         {houses.map((house) => (
           <SwiperSlide className="w-full h-full" key={house.id}>
             <a href={`/casas/${house.id}`}>
-          <img className="md:h-[600px] w-full object-cover aspect-square" src={house.images[0]} alt={house.title} />
+          <img className="md:h-[600px] w-full object-cover aspect-square" src={house.main_image} alt={house.title} />
             </a>
           </SwiperSlide>
         ))}
