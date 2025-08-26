@@ -109,20 +109,24 @@ function WizardForm() {
   };
 
   return (
-    <section className="mx-auto mt-20 w-full max-w-5xl rounded-xl bg-white p-6 shadow-sm shadow-black/30">
+     <section className={`mx-auto mb-20 mt-8 w-full max-w-5xl flex flex-col h-[100vh] md:h-auto justify-between gap-5 rounded-xl  bg-white p-6 md:shadow-sm shadow-black/30`}>
       <div className="flex flex-col items-center justify-center">
-        <h2 className="text-center text-primary text-4xl font-bold">
+        <h2 className="text-center text-primary md:text-4xl text-2xl font-bold">
           ¡Imaginemos tu casa juntos!
         </h2>
         <h3 className="my-5">Empecemos:</h3>
-      </div>
-      <div className="mb-4 h-2 w-full rounded-full bg-gray-200">
+      <div className="mb-4 w-full rounded-full">
+        <p className="text-center font-bold">{step/10 * 100}%</p>
         <div
           className="h-2 rounded-full bg-black"
           style={{ width: `${(step / 10) * 100}%` }}
         />
       </div>
+      <div className="w-full">
+
       {steps[step]}
+      </div>
+      </div>
       {/* <p className="text-center pt-5 text-primary text-lg font-normal">
         Este formulario esta patentado por Estudio VArq – Arquitectura. Todos
         los derechos de su uso son reservados. Queda prohibido su copia o
