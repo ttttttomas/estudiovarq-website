@@ -28,6 +28,9 @@ function Step6({formData, setFormData, next, prev}) {
             formData.plants === "" ? "border-gray-300" : ""
           }`}
         >
+          <div className="flex items-center justify-center mb-2 gap-2">
+            <img src="2pisos.png" alt="2 pisos" className="w-1/2" />
+          </div>
           <select name="plants" onChange={handleChange}>
             <option value="Planta baja">Planta baja</option>
             <option value="1 piso">1 piso</option>

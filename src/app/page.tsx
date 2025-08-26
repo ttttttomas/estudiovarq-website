@@ -7,15 +7,15 @@ export default async function HomePage() {
   return (
     <main className="mt-30 md:mt-0">
       <section
-        className="relative h-screen bg-cover bg-center bg-no-repeat md:h-[100vh]"
+        className="relative h-[88vh] bg-cover bg-center bg-no-repeat md:h-[100vh]"
         id="home"
         style={{backgroundImage: "url('./home.png')"}}
       >
         <div className="bg-primary h-full w-full opacity-[0.63]" />
-        <div className="absolute top-0 right-0 bottom-30 z-10 flex max-w-[600px] flex-col items-start justify-center gap-6 px-4 text-white md:px-0 2xl:right-[340px]">
+        <div className="absolute top-10 right-0 bottom-30 z-10 flex max-w-[700px] flex-col items-start justify-center gap-6 px-4 text-white md:px-0 2xl:right-[250px]">
           <h1 className="text-start text-4xl font-semibold md:text-5xl">
-            Podemos diseñar y construir tu casa para que <br /> tengas más momentos <br /> felices
-            con tu familia
+            Nuestro proposito es que vivas
+            <br /> en un lugar hermoso y seguro. <br /> Ya acompañamos a mas <br /> de 100 familias.
           </h1>
           <p className="text-start text-lg font-medium md:text-2xl">
             Arquitectos especializados en diseñar, remodelar y construir hogares felices.
@@ -30,7 +30,7 @@ export default async function HomePage() {
       </section>
       <WizardForm />
       <section
-        className="mx-2 my-30 flex flex-col items-center justify-center gap-4 md:mx-0 md:flex-row md:items-start"
+        className="mx-2 my-30 mt-50 flex flex-col items-center justify-center gap-4 md:mx-0 md:flex-row md:items-start"
         id="grid"
       >
         <div

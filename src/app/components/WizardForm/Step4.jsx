@@ -38,10 +38,10 @@ function Step4({formData, setFormData, next, prev}) {
   return (
     <div className="space-y-4">
       <p className="text-center text-primary text-lg font-semibold">¿Cuántos baños necesitas?</p>
-      <div className="flex md:flex-nowrap flex-wrap justify-center gap-6">
+      <div className="flex md:flex-nowrap flex-wrap justify-center gap-1 md:gap-6">
         <div
           className={`flex w-[45%] min-w-[140px] cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.bathroom === "Toilette" ? "border-black" : ""
+            !formData.bathroom === "Toilette" ? " " : ""
           }`}
         >
           <p> Toilette</p>
@@ -55,7 +55,7 @@ function Step4({formData, setFormData, next, prev}) {
         </div>
         <div
           className={`flex w-[45%] min-w-[140px] cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.bathroom === "Baño simple" ? "border-black" : ""
+            !formData.bathroom === "Baño simple" ? "border-black" : ""
           }`}
         >
           <p>Baño simple</p>
@@ -69,7 +69,7 @@ function Step4({formData, setFormData, next, prev}) {
         </div>
         <div
           className={`flex w-[45%] min-w-[140px] cursor-pointer flex-col rounded-lg border p-4 text-center hover:bg-gray-100 ${
-            formData.bathroom === "Con antebaño" ? "border-black" : ""
+            formData.bathroom === "Con antebaño" ? "border-gray-300" : ""
           }`}
         >
           <p> Con antebaño</p>
@@ -82,7 +82,7 @@ function Step4({formData, setFormData, next, prev}) {
           </select>
         </div>
       </div>
-      <div className="flex justify-between pt-4">
+      <div className="flex justify-between md:pt-4">
         <button className="cursor-pointer rounded bg-gray-300 px-4 py-2" onClick={prev}>
           Anterior
         </button>

@@ -17,7 +17,7 @@ function Step2({formData, setFormData, next, prev}) {
       </p>
       <div className="flex justify-center gap-6">
         <div
-          className={`w-96 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
+          className={`w-80 cursor-pointer rounded-lg border p-4 text-center hover:bg-gray-200 ${
             formData.mainBedroom === "Simple" ? "border-black bg-gray-200" : "border-gray-300"
           }`}
           onClick={() => {
