@@ -15,7 +15,11 @@ export default async function HomePage() {
         <div className="absolute top-10 right-0 bottom-30 z-10 flex max-w-[700px] flex-col items-start justify-center gap-6 px-4 text-white md:px-0 2xl:right-[250px]">
           <h1 className="text-start text-4xl font-semibold md:text-5xl">
             Nuestro proposito es que vivas
-            <br /> en un lugar hermoso y seguro. <br /> Ya acompañamos a mas <br /> de 100 familias.
+            <br className="hidden md:block" /> en un lugar hermoso y seguro.
+            <br className="py-20" />
+            <p className="pt-5 md:pt-0">
+              Ya acompañamos a mas <br className="hidden md:block" /> de 100 familias.
+            </p>
           </h1>
           <p className="text-start text-lg font-medium md:text-2xl">
             Arquitectos especializados en diseñar, remodelar y construir hogares felices.
