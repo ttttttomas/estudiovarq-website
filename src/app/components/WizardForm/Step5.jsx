@@ -28,7 +28,7 @@ function Step5({formData, setFormData, next, prev}) {
             formData.diningRoom === "" ? "border-gray-300" : ""
           }`}
         >
-          <img src="/LIVING.png" alt="LIVING" className="mx-auto w-1/2" />
+          <img src="/COMEDOR.png" alt="COMEDOR" className="mx-auto w-1/2" />
           <select name="diningRoom" onChange={handleChange}>
             <option value="Ninguno">Ninguno</option>
             <option value="6 personas">6 personas</option>
