@@ -9,10 +9,29 @@ import axios from "axios";
 import "photoswipe/style.css";
 
 import {House} from "@/types";
+import {slugify} from "@/app/utils/slugify";
 
 export default function CasaIDpage() {
-  const {id} = useParams();
-  const [house, setHouse] = useState<House>();
+  const {slug} = useParams();
+  const [house, setHouse] = useState<House | null>(null);
+
+  useEffect(() => {
+    const getHouse = async () => {
+      const res = await axios.get("https://api-estudiovarq.iwebtecnology.com/houses");
+      const houses = res.data.map((h: House) => ({
+        ...h,
+        slug: slugify(h.title),
+      }));
+
+      const found = houses.find((h: House) => h.slug === slug);
+
+      setHouse(found || null);
+    };
+
+    getHouse();
+  }, [slug]);
+
+  if (!house) return <h1>Cargando...</h1>;
 
   // useEffect(() => {
   //   const lightbox = new PhotoSwipeLightbox({
@@ -30,16 +49,6 @@ export default function CasaIDpage() {
 
   //   lightbox.init();
   // }, []);
-
-  useEffect(() => {
-    const getHouse = async () => {
-      const response = await axios.get(`https://api-estudiovarq.iwebtecnology.com/houses/${id}`);
-
-      setHouse(response.data);
-    };
-
-    getHouse();
-  }, [id]);
 
   return (
     <main className="mx-5 mt-36 mb-10 md:mx-10 md:mt-32">
@@ -70,7 +79,7 @@ export default function CasaIDpage() {
             <img
               key={image}
               alt={house.title}
-              className="mx-auto my-4 h-full w-auto"
+              className="mx-auto my-4 h-full max-h-screen w-auto"
               loading="lazy"
               src={image}
             />
