@@ -1,18 +1,77 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import type {House} from "@/types";
+
+import {useEffect, useState, Suspense} from "react";
 import {useParams} from "next/navigation";
 import axios from "axios";
-// import PhotoSwipeLightbox from "photoswipe/lightbox";
-// import PhotoSwipe from "photoswipe";
 
-import "photoswipe/style.css";
-
-import {House} from "@/types";
 import {slugify} from "@/app/utils/slugify";
 
+// ---------- util p/ suspender hasta que la imagen cargue ----------
+const imgCache = new Map<
+  string,
+  {status: "pending" | "loaded" | "error"; promise?: Promise<void>}
+>();
+
+function ensureImage(src: string) {
+  let entry = imgCache.get(src);
+
+  if (!entry) {
+    let resolve!: () => void;
+    let reject!: (e: unknown) => void;
+    const promise = new Promise<void>((res, rej) => {
+      resolve = res;
+      reject = rej;
+    });
+
+    entry = {status: "pending", promise};
+    imgCache.set(src, entry);
+
+    const img = new Image();
+
+    img.onload = () => {
+      entry!.status = "loaded";
+      resolve();
+    };
+    img.onerror = (e) => {
+      entry!.status = "error";
+      reject(e);
+    };
+    img.src = src;
+  }
+  if (entry.status === "pending") throw entry.promise;
+  if (entry.status === "error") throw new Error(`No se pudo cargar la imagen: ${src}`);
+}
+
+function ImageWithSuspense({
+  src,
+  alt,
+  className,
+  loading = "lazy",
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  loading?: "lazy" | "eager";
+}) {
+  ensureImage(src);
+
+  return <img alt={alt} className={className} loading={loading} src={src} />;
+}
+
+function ImageFallback() {
+  return (
+    <div className="h-[80vh] w-full animate-pulse rounded-xl bg-gray-200/80">
+      <p className="my-auto text-center text-sm text-gray-600">Cargando...</p>
+    </div>
+  );
+}
+
+// -----------------------------------------------------------------
+
 export default function CasaIDpage() {
-  const {slug} = useParams();
+  const {slug} = useParams<{slug: string}>();
   const [house, setHouse] = useState<House | null>(null);
 
   useEffect(() => {
@@ -22,7 +81,6 @@ export default function CasaIDpage() {
         ...h,
         slug: slugify(h.title),
       }));
-
       const found = houses.find((h: House) => h.slug === slug);
 
       setHouse(found || null);
@@ -32,23 +90,6 @@ export default function CasaIDpage() {
   }, [slug]);
 
   if (!house) return <h1>Cargando...</h1>;
-
-  // useEffect(() => {
-  //   const lightbox = new PhotoSwipeLightbox({
-  //     gallery: "#gallery",
-  //     children: "a",
-  //     pswpModule: PhotoSwipe,
-  //     maxWidthToAnimate: 2000,
-  //     zoom: true,
-  //     showHideOpacity: true,
-  //     wheelToZoom: false,
-  //     imageClickAction: "close",
-  //     padding: {top: 20, bottom: 20, left: 50, right: 50},
-  //     bgOpacity: 0.8,
-  //   });
-
-  //   lightbox.init();
-  // }, []);
 
   return (
     <main className="mx-5 mt-36 mb-10 md:mx-10 md:mt-32">
@@ -65,24 +106,18 @@ export default function CasaIDpage() {
           Diseñamos y construimos las mejores soluciones.
         </p>
       </section>
+
       <section className="mx-auto w-full columns-1 gap-4 md:w-3/4" id="gallery">
         {house &&
           house.images.map((image) => (
-            // <a
-            //   key={image}
-            //   className="mb-4 block"
-            //   data-pswp-aspect-ratio="cover"
-            //   data-pswp-height="600"
-            //   data-pswp-width="1000"
-            //   href={image}
-            // >
-            <img
-              key={image}
-              alt={house.title}
-              className="mx-auto my-4 h-full max-h-screen w-auto"
-              loading="lazy"
-              src={image}
-            />
+            <Suspense key={image} fallback={<ImageFallback />}>
+              <ImageWithSuspense
+                alt={house.title}
+                className="mx-auto my-4 h-full max-h-screen w-auto"
+                loading="lazy"
+                src={image}
+              />
+            </Suspense>
           ))}
       </section>
     </main>
