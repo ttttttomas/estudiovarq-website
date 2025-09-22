@@ -10,6 +10,7 @@ function FinalStep2({formData, setFormData, prev}) {
     ...formData,
     phone: "549" + formData.phone,
     totalsM2,
+    lead_id: ""
   };
   const handleSubmit = (e) => {
     e.preventDefault();

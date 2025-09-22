@@ -10,9 +10,11 @@ function FinalStep({formData, setFormData, prev}) {
     ...formData,
     phone: "549" + formData.phone,
     totalsM2,
+    lead_id: ""
   };
    const handleSubmit = (e) => {
     e.preventDefault();
+  
     axios.post("https://api-estudiovarq.iwebtecnology.com/wizardForm", dataToSend);    
     
     toast.success("¡Formulario enviado!");
