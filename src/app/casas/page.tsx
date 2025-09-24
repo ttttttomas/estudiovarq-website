@@ -9,7 +9,7 @@ import {House} from "@/types";
 
 function CardFallback() {
   return (
-    <div className="h-64 w-full animate-pulse rounded-xl bg-gray-200/70 dark:bg-gray-800/40" />
+    <div className="h-64 w-full animate-pulse rounded-xl bg-gray-200/70 text-black dark:bg-gray-800/40" />
   );
 }
 
@@ -44,10 +44,10 @@ export default async function Casaspage() {
           <HomeCard house={houses[3]} />
         </Suspense>
         <Suspense fallback={<CardFallback />}>
-          <HomeCard house={houses[13]} />
+          <HomeCard house={houses[1]} />
         </Suspense>
         <Suspense fallback={<CardFallback />}>
-          <HomeCard house={houses[11]} />
+          <HomeCard house={houses[0]} />
         </Suspense>
         <Suspense fallback={<CardFallback />}>
           <HomeCard house={houses[6]} />

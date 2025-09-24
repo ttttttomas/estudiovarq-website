@@ -14,6 +14,7 @@ function FinalStep2({formData, setFormData, prev}) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+  
     axios.post("https://api-estudiovarq.iwebtecnology.com/wizardFormHouses", dataToSend);    
     
     toast.success("¡Formulario enviado!");
