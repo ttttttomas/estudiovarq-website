@@ -6,7 +6,12 @@ import { useM2 } from "@/app/context/M2Context";
 function FinalStep({formData, setFormData, prev}) {
   const { totalsM2 } = useM2();
   const router = useRouter();
-  const dataToSend = {
+
+  function eliminarEspacios(cadena) {
+  return cadena.replace(/\s+/g, '');
+}
+
+  const data = {
     ...formData,
     phone: "549" + formData.phone,
     totalsM2,
@@ -14,8 +19,12 @@ function FinalStep({formData, setFormData, prev}) {
   };
    const handleSubmit = (e) => {
     e.preventDefault();
-  
-    axios.post("https://api-estudiovarq.iwebtecnology.com/wizardForm", dataToSend);    
+    const phoneFormatted = eliminarEspacios(data.phone);
+    const newData = {
+      ...data,
+      phone: phoneFormatted
+    };
+    axios.post("https://api-estudiovarq.iwebtecnology.com/wizardForm", newData);    
     
     toast.success("¡Formulario enviado!");
     setTimeout(() => {

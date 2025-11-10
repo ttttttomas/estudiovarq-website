@@ -21,6 +21,8 @@ export default async function Casaspage() {
     slug: slugify(house.title),
   }));
 
+  console.log(houses)
+
   return (
     <main className="mt-40">
       <h1 className="text-primary mt-10 text-center text-3xl font-bold">
